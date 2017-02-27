@@ -184,7 +184,11 @@ function receivedMessage(event) {
 	  case 'hello':
 		sendTextMessage(senderID, "Hi This is Test Bot");
 		break;
-	  
+		
+	  case 'မင်္ဂလာပါ':
+		sendTextMessage(senderID, "မင်္ဂလာပါ ကျွန်တော်ကတော့ စမ်းသပ်နေသော စက်ရုပ်ပါ");
+		break;
+		
 	  case 'photo':
 	  case 'image':
         sendImageMessage(senderID);
