@@ -189,7 +189,8 @@ function receivedMessage(event) {
         sendGifMessage(senderID);
         break;
 
-      case 'audio':'sound':
+      case 'audio':
+	  case 'sound':
         sendAudioMessage(senderID);
         break;
 
