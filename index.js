@@ -11,6 +11,7 @@ const request = require('request')
 const app = express()
 const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN)
 const SERVER_URL = (process.env.SERVER_URL)
+const token = (process.env.MESSENGER_PAGE_ACCESS_TOKEN)
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -729,7 +730,7 @@ function sendAccountLinking(recipientId) {
 function callSendAPI(messageData) {
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: { access_token: PAGE_ACCESS_TOKEN },
+    qs: { access_token: token },
     method: 'POST',
     json: messageData
 
