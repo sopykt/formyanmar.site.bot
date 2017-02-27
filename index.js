@@ -10,6 +10,7 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN)
+const SERVER_URL = (process.env.SERVER_URL)
 
 app.set('port', (process.env.PORT || 5000))
 
