@@ -188,7 +188,7 @@ function receivedMessage(event) {
       
       case 'cephalexin':
       case 'cefalexin':
-		sendTextMessage(senderID, "Therapeutic \n action"); 
+		sendTextMessage(senderID, "Therapeutic action \n _____ \n First-generation cephalosporin antibacterial"); 
 	break;
      
       case 'test button':
