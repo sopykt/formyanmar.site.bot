@@ -172,13 +172,6 @@ function receivedMessage(event) {
 
     sendTextMessage(senderID, "Quick reply tapped");
     return;
-	if (quickReplyPayload)	{
-	switch (quickReplyPayload)	{
-		case 'DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY':
-			sendTextMessage(senderID, "Comedy choosed");
-			break;	
-	}
-	}
   }
 
   if (messageText) {
