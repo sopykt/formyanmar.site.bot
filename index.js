@@ -189,7 +189,8 @@ function receivedMessage(event) {
       case 'cephalexin':
       case 'cefalexin':
 		sendTextMessage(senderID, "Therapeutic action \n _____ \n First-generation cephalosporin antibacterial"); 
-	break;
+		sendTextMessage(senderID, "Indications \n _____ \n Skin infections due to staphylococci and/or streptococci: impetigo, furuncle, erysipelas and superficial cellulitis");
+		break;
      
       case 'test button':
         sendTestButtonMessage(senderID);
