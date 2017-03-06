@@ -185,6 +185,12 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText.toLowerCase()) {
+      
+      case 'cephalexin':
+      case 'cefalexin':
+		sendTextMessage(senderID, "Therapeutic \n action"); 
+	break;
+     
       case 'test button':
         sendTestButtonMessage(senderID);
         break;
