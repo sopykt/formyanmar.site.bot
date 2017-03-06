@@ -169,8 +169,12 @@ function receivedMessage(event) {
     var quickReplyPayload = quickReply.payload;
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
-
-    sendTextMessage(senderID, "Quick reply tapped");
+	switch (quickReplyPayload) {
+	  case 'DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY':
+		sendTextMessage(senderID, "comedy choosed");
+		break;
+	}
+		sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
 
