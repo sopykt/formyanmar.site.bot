@@ -190,7 +190,8 @@ function receivedMessage(event) {
       case 'cefalexin':
 		sendTextMessage(senderID, "Therapeutic action \n_____ \nFirst-generation cephalosporin antibacterial"); 
 		sendTextMessage(senderID, "Indications \n_____ \nSkin infections due to staphylococci and/or streptococci: impetigo, furuncle, erysipelas and superficial cellulitis");
-		sendTextMessage(senderID, "Presentation \n250 mg capsule \n125 mg/5 ml powder");
+		sendTextMessage(senderID, "Presentation \n_____ \n250 mg capsule \n125 mg/5 ml powder");
+		sendTextMessage(senderID, "Dosage \n_____ \nNeonate under 7 days: \n50 mg/kg/day in 2 divided doses \nNeonate 7 to 28 days: \n75 mg/kg/day in 3 divided doses \nThe exact dose should be calculated according to the newborn\’s weight\. \nChild 1 month to 12 years: \n25 to 50 mg/kg/day in 2 divided doses \nChild over 12 years and adult: \n2 g/day in 2 divided doses");
 		break;
      
       case 'test button':
