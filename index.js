@@ -180,11 +180,7 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText.toLowerCase()) {
-      case 'DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY':
-		sendTextMessage(senderID, "Comedy is Great");
-		break;
-	  
-	  case 'hi':
+      case 'hi':
 	  case 'hello':
 		sendTextMessage(senderID, "Hi This is Test Bot");
 		break;
