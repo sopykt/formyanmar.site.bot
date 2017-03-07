@@ -189,12 +189,13 @@ function receivedMessage(event) {
       case 'cephalexin':
       case 'cefalexin':
 		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nFirst-generation cephalosporin antibacterial"); 
-		sendTextMessage(senderID, "Indications \n👉👉👉👉👉 \nSkin infections due to staphylococci and/or streptococci: impetigo, furuncle, erysipelas and superficial cellulitis");
+		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nSkin infections due to staphylococci and/or streptococci: impetigo, furuncle, erysipelas and superficial cellulitis");
 		sendTextMessage(senderID, "Presentation \n💊💊💊💊💊💊 \n250 mg capsule \n125 mg/5 ml powder");
 		sendTextMessage(senderID, "Dosage \n💊💊💊💊💊💊 \nNeonate under 7 days: \n50 mg/kg/day in 2 divided doses \nNeonate 7 to 28 days: \n75 mg/kg/day in 3 divided doses \nThe exact dose should be calculated according to the newborn\’s weight\. \nChild 1 month to 12 years: \n25 to 50 mg/kg/day in 2 divided doses \nChild over 12 years and adult: \n2 g/day in 2 divided doses");
 		sendCephalexinDoseImageMessage(senderID);
 		sendTextMessage(senderID, "Duration \n⏰⏰⏰⏰⏰ \nImpetigo, furuncle: 7 days; \nerysipelas, cellulitis: 7 to 10 days");
 		sendTextMessage(senderID, "Contra-indications, adverse effects, precautions \n💣💣💣💣💣 \nDo not administer to patients with allergy to cephalosporin\. \nAdminister with caution to patients with allergy to penicillin \(cross-sensitivity may occur\) and severe renal impairment \(reduce the dose\)\. \nMay cause: gastrointestinal disturbances \(particularly diarrhoea\)\, allergic reactions \(skin eruption\, fever\, pruritus\)\. \nPregnancy: \nno contra-indication \nBreast-feeding: \nno contra-indication");
+		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nTake preferably between meals\. \nAlso comes in 250 mg/5 ml powder for oral suspension\. \nStorage\: \nbelow 25°C \nFor the oral suspension \(powder or reconstituted suspension\)\: \nfollow manufacturer\’s instructions");
 		break;
      
       case 'test button':
