@@ -211,7 +211,7 @@ function receivedMessage(event) {
 		case 'chlorphenamine':
 		case 'chlorpheniramine':
 		case 'burmeton':
-		sendTextMessage(senderID, "Therapeutic action \nSedating antihistamine");
+		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nSedating antihistamine");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nSymptomatic treatment of minor allergic reactions \(contact dermatitis\, seasonal allergy\, allergy to drugs\, food\, etc\.\)");
 		sendTextMessage(senderID, "Presentation \n💊💊💊💊💊💊 \n4 mg tablet \nAlso comes in 2 mg/5 ml oral solution");
 		sendTextMessage(senderID, "Dosage \n💊💊💊💊💊💊 \nChild from 1 to 2 years: 1 mg 2 times daily \nChild from 2 to 6 years: 1 mg 4 to 6 times daily \(max\. 6 mg/day\) \nChild from 6 to 12 years: 2 mg 4 to 6 times daily \(max\. 12 mg/day\) \nChild over 12 years and adult: 4 mg 4 to 6 times daily \(max\. 24 mg/day\)");
@@ -232,6 +232,10 @@ function receivedMessage(event) {
 		
 	  case 'မင်္ဂလာပါ':
 		sendTextMessage(senderID, "မင်္ဂလာပါ ကျွန်တော်ကတော့ စမ်းသပ်နေသော စက်ရုပ်ပါ");
+		break;
+		
+	  case 'မဂၤလာပါ':
+		sendTextMessage(senderID, "မဂၤလာပါ ကၽန္ေတာ္ကေတာ့ စမ္းသပ္ေနေေသာစက္ရုပ္ပါ");
 		break;
 		
 	  case 'photo':
