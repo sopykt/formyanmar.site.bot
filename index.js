@@ -235,7 +235,7 @@ function receivedMessage(event) {
 		break;
 		
 	  case 'မဂၤလာပါ':
-		sendTextMessage(senderID, "မဂၤလာပါ ကၽန္ေတာ္ကေတာ့ စမ္းသပ္ေနေေသာစက္ရုပ္ပါ");
+		sendTextMessage(senderID, "မဂၤလာပါ က်ြန္ေတာ္ကေတာ့ စမ္းသပ္ေနေသာ စက္ရုပ္ပါ");
 		break;
 		
 	  case 'photo':
