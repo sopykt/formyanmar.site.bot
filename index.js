@@ -230,6 +230,10 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Hi This is Test Bot");
 		break;
 		
+	  case 'link':
+		sendTextMessage(senderID, "http://www.mobilemonk.tv/conversational-commerce-rise-of-the-chatbots");
+		break;
+		
 	  case 'မင်္ဂလာပါ':
 		sendTextMessage(senderID, "မင်္ဂလာပါ ကျွန်တော်ကတော့ စမ်းသပ်နေသော စက်ရုပ်ပါ");
 		break;
