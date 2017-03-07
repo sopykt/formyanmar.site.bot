@@ -192,6 +192,7 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Indications \n_____ \nSkin infections due to staphylococci and/or streptococci: impetigo, furuncle, erysipelas and superficial cellulitis");
 		sendTextMessage(senderID, "Presentation \n_____ \n250 mg capsule \n125 mg/5 ml powder");
 		sendTextMessage(senderID, "Dosage \n_____ \nNeonate under 7 days: \n50 mg/kg/day in 2 divided doses \nNeonate 7 to 28 days: \n75 mg/kg/day in 3 divided doses \nThe exact dose should be calculated according to the newborn\’s weight\. \nChild 1 month to 12 years: \n25 to 50 mg/kg/day in 2 divided doses \nChild over 12 years and adult: \n2 g/day in 2 divided doses");
+		sendCephalexinDoseImageMessage(senderID);
 		break;
      
       case 'test button':
@@ -381,6 +382,28 @@ function sendImageMessage(recipientId) {
         type: "image",
         payload: {
           url: SERVER_URL + "/assets/rift.png"
+        }
+      }
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+/*
+ * Send cephalexin dose png image 
+ *
+ */
+function sendCephalexinDoseImageMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          url: SERVER_URL + "/assets/cephalexin_dose.png"
         }
       }
     }
