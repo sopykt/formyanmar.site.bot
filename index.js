@@ -193,6 +193,8 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Presentation \n_____ \n250 mg capsule \n125 mg/5 ml powder");
 		sendTextMessage(senderID, "Dosage \n_____ \nNeonate under 7 days: \n50 mg/kg/day in 2 divided doses \nNeonate 7 to 28 days: \n75 mg/kg/day in 3 divided doses \nThe exact dose should be calculated according to the newborn\’s weight\. \nChild 1 month to 12 years: \n25 to 50 mg/kg/day in 2 divided doses \nChild over 12 years and adult: \n2 g/day in 2 divided doses");
 		sendCephalexinDoseImageMessage(senderID);
+		sendTextMessage(senderID, "Duration \n_____ \nImpetigo, furuncle: 7 days; \nerysipelas, cellulitis: 7 to 10 days");
+		sendTextMessage(senderID, "Contra-indications, adverse effects, precautions \n_____ \nDo not administer to patients with allergy to cephalosporin\. \nAdminister with caution to patients with allergy to penicillin \(cross-sensitivity may occur\) and severe renal impairment \(reduce the dose\)\. \nMay cause: gastrointestinal disturbances \(particularly diarrhoea\)\, allergic reactions \(skin eruption\, fever\, pruritus\)\. \nPregnancy: \nno contra-indication \nBreast-feeding: \nno contra-indication");
 		break;
      
       case 'test button':
