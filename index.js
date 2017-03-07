@@ -207,7 +207,20 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Contra-indications, adverse effects, precautions \n💣💣💣💣💣 \nDo not administer to patients with allergy to cephalosporins\. \nAdminister with caution to penicillin-allergic patients \(cross-sensitivity may occur\) and in patients with severe renal impairment \(reduce dosage\)\. \nMay cause: gastrointestinal disturbances \(especially diarrhoea\)\, headache\, dizziness\, allergic reactions \(rash\, pruritus\, fever\)\. In the event of allergic reaction\, stop treatment immediately\. \nPregnancy: no contra-indication \nBreast-feeding: no contra-indication");
 		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nAlso comes in 400 mg capsules \nStorage: below 25°C \nFor the oral suspension \(powder or reconstituted suspension\): follow manufacturer\’s instructions\.");
 		break;
-     
+		
+		case 'chlorphenamine':
+		case 'chlorpheniramine':
+		case 'burmeton':
+		sendTextMessage(senderID, "Therapeutic action \nSedating antihistamine");
+		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nSymptomatic treatment of minor allergic reactions \(contact dermatitis\, seasonal allergy\, allergy to drugs\, food\, etc\.\)");
+		sendTextMessage(senderID, "Presentation \n💊💊💊💊💊💊 \n4 mg tablet \nAlso comes in 2 mg/5 ml oral solution");
+		sendTextMessage(senderID, "Dosage \n💊💊💊💊💊💊 \nChild from 1 to 2 years: 1 mg 2 times daily \nChild from 2 to 6 years: 1 mg 4 to 6 times daily \(max\. 6 mg/day\) \nChild from 6 to 12 years: 2 mg 4 to 6 times daily \(max\. 12 mg/day\) \nChild over 12 years and adult: 4 mg 4 to 6 times daily \(max\. 24 mg/day\)");
+		sendBurmetonDoseImageMessage(senderID);
+		sendTextMessage(senderID, "Duration \n⏰⏰⏰⏰⏰ \nAccording to clinical response: as short as possible");
+		sendTextMessage(senderID, "Contra-indications, adverse effects, precautions \n💣💣💣💣💣 \nAdminister with caution and monitor use in patients with prostate disorders or closed-angle glaucoma\, patients \> 60 years and children \(risk of agitation\, excitability\)\. \nMay cause: drowsiness \(caution when driving/operating machinery\)\, anticholinergic effects \(dry mouth\, blurred vision\, constipation\, tachycardia\, disorders of micturition\)\, headache\, tremor\, allergic reactions\. \nMonitor combination with CNS depressants \(opioid analgesics\, antipsychotics\, sedatives\, antidepressants\, etc\.\)\. \nAvoid alcohol during treatment\. \nPregnancy: no contra-indication: NO PROLONGED TREATMENT \nBreast-feeding: no contra-indication: monitor the child for excessive somnolence\.");
+		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nChlorphenamine is less sedating than promethazine. \nDexchlorpheniramine has the same indications: \n• child 1 to 2 years: 0.25 mg 2 to 3 times daily \n• child 2 to 6 years: 0.5 mg 2 to 3 times daily \n• child 6 to 12 years: 1 mg 3 to 4 times daily \n• child over 12 years and adult: 2 mg 3 to 4 times daily \nStorage: below 25°C");
+		break;
+		
       case 'test button':
         sendTestButtonMessage(senderID);
         break;
@@ -417,6 +430,28 @@ function sendCephalexinDoseImageMessage(recipientId) {
         type: "image",
         payload: {
           url: SERVER_URL + "/assets/cephalexin_dose.png"
+        }
+      }
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+/*
+ * Send burmeton dose png image 
+ *
+ */
+function sendBurmetonDoseImageMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          url: SERVER_URL + "/assets/burmeton_dose.png"
         }
       }
     }
