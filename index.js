@@ -224,6 +224,10 @@ function receivedMessage(event) {
       case 'test button':
         sendTestButtonMessage(senderID);
         break;
+        
+        case 'test image':
+        sendTestImageMessage(senderID, "/assets/rift.png");
+        break;
       
       case 'hi':
 	  case 'hello':
@@ -572,6 +576,25 @@ function sendTextMessage(recipientId, messageText) {
   };
 
   callSendAPI(messageData);
+}
+
+// this is test sendimage function
+function sendTestImageMessage(recipientId, imageurl)	{
+	var messageData = {
+		recipient: {
+			id: recipientId
+		},
+		message: {
+			attachment:{
+				type:"image",
+				payload:{
+					url:SERVER_URL+imageurl
+				}
+			}
+		}
+	};
+	
+	callSendAPI(messageData);
 }
 
 /*
