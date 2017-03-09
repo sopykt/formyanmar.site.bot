@@ -428,6 +428,23 @@ function sendImageMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+// this is test convo box function
+function sendConvoBox (recipientId) {
+	var messageData = {
+		recipient: {
+			id: recipientId
+		},
+		message: {
+			text: "Thanks for purchase, This item will deliver to your location as soon as possible. \nWhat is your name?",
+			metadata: "DEVELOPER_DEFINED_METADATA"
+		}
+		
+	};
+	
+	callSendAPI(messageData);
+	
+}
+
 /*
  * Send cephalexin dose png image 
  *
