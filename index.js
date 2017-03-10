@@ -762,7 +762,7 @@ function sendTestGenericMessage(recipientId) {
             image_url: SERVER_URL + "/assets/rift.png",
             buttons: [{
               type: "web_url",
-              url: SERVER_URL + "/assets/form.html",
+              url: "https://docs.google.com/forms/d/e/1FAIpQLSe3S4kOw__1esQ835RWhlPDD03uOhxpUKEdOE4h5Zh9ZKNw0Q/viewform?usp=pp_url&entry.1991652553&entry.560259158&entry.1928389408&entry.221518448=rift-001",
               title: "Buy Now",
               webview_height_ratio:"compact"
             }, {
