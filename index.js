@@ -329,7 +329,7 @@ FB.api('/me', function(response) {
 });
 }
 
-var firstName = fbinfo[1]
+var firstName = fbinfo[1];
 
 //
 function sendUserNameMessage(recipientId) {
