@@ -317,24 +317,36 @@ function receivedMessage(event) {
 }
 
 // get user profile testing
-function getFBData () {
-FB.api('/me', function(response) {
-  fbinfo = new Array();
-  fbinfo[0] = response.id;
-  fbinfo[1] = response.first_name;
-  fbinfo[2] = response.last_name;
-  fbinfo[3] = response.email;
+function getFBData (userprofile) {
+request({
+    uri: 'https://graph.facebook.com/v2.6/me/',
+    qs: { access_token: token },
+    method: 'GET',
+    json: userprofile
 
-     var im = document.getElementById("profileImage").setAttribute("src", "http://graph.facebook.com/" + response.id + "/picture?type=normal");
-});
+  }, function (error, response) {
+    if (!error && response.statusCode == 200) {
+      var userid = response.id;
+      var userfirstname = response.first_name;
+      var userlastname = response.last_name;
+      var useremail = response.email;
+
+      if (userfirstname) {
+        console.log("Successfully get user is %s ", 
+          userfirstname);
+      } 
+    } else {
+      console.error("Failed getting user profile");
+    }
+  });  
 }
 
-
+ 
 
 //
 function sendUserNameMessage(recipientId) {
-	getFBData ();
-	var firstName = fbinfo[0];
+	getFBData (userprofile);
+	var firstName = userfirstname;
   var messageData = {
     recipient: {
       id: recipientId
