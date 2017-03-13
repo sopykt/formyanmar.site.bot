@@ -317,7 +317,7 @@ function receivedMessage(event) {
 }
 
 // get user profile testing
-function getFBData (userprofile) {
+function getFBData () {
 request({
     uri: 'https://graph.facebook.com/v2.6/me/',
     qs: { access_token: token },
@@ -345,7 +345,7 @@ request({
 
 //
 function sendUserNameMessage(recipientId) {
-	getFBData (userprofile);
+	getFBData ();
 	var firstName = userfirstname;
   var messageData = {
     recipient: {
