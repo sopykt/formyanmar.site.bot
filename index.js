@@ -322,7 +322,7 @@ request({
     uri: 'https://graph.facebook.com/v2.6/me/',
     qs: { access_token: token },
     method: 'GET',
-    json: userprofile
+   
 
   }, function (error, response) {
     if (!error && response.statusCode == 200) {
