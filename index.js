@@ -341,12 +341,12 @@ request({
   });  
 }
 
- 
+ var firstName = userfirstname;
 
 //
 function sendUserNameMessage(recipientId) {
 	getFBData ();
-	var firstName = userfirstname;
+	
   var messageData = {
     recipient: {
       id: recipientId
