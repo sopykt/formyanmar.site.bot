@@ -231,7 +231,7 @@ function receivedMessage(event) {
       
       case 'hi':
 	  case 'hello':
-		sendTextMessage(senderID, "Hi This is Test Bot " + ${user.first_name});
+		sendTextMessage(senderID, 'Hi This is Test Bot ${user.first_name}');
 		break;
 		
 	  case 'link':
