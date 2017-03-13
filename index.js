@@ -300,10 +300,10 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break; 
         
-      case 'my profile':
+      /*case 'my profile':
 		sendUserNameMessage(senderID);
-		break;
-
+		break; */
+		
       case 'account linking':
         sendAccountLinking(senderID);
         break;
@@ -316,7 +316,7 @@ function receivedMessage(event) {
   }
 }
 
-// get user profile testing
+/* get user profile testing
 
 function sendUserNameMessage(recipientId) {
 	getUserProfile();
@@ -333,7 +333,9 @@ function sendUserNameMessage(recipientId) {
   
   callSendAPI(messageData);
 }
-  
+ */ 
+ 
+ 
 /*
  * Delivery Confirmation Event
  *
