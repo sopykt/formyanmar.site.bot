@@ -299,6 +299,10 @@ function receivedMessage(event) {
       case 'typing off':
         sendTypingOff(senderID);
         break; 
+        
+      case 'my profile':
+		sendUserNameMessage(senderID);
+		break;
 
       case 'account linking':
         sendAccountLinking(senderID);
@@ -312,7 +316,23 @@ function receivedMessage(event) {
   }
 }
 
+// get user profile testing
 
+function sendUserNameMessage(recipientId) {
+	getUserProfile();
+	
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: ${user.first_name},
+      metadata: "DEVELOPER_DEFINED_METADATA"
+    }
+  };
+  
+  callSendAPI(messageData);
+}
   
 /*
  * Delivery Confirmation Event
