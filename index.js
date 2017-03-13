@@ -329,11 +329,12 @@ FB.api('/me', function(response) {
 });
 }
 
-var firstName = response.first_name;
+
 
 //
 function sendUserNameMessage(recipientId) {
 	getFBData ();
+	var firstName = fbinfo[0];
   var messageData = {
     recipient: {
       id: recipientId
