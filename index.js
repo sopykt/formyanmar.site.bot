@@ -298,7 +298,11 @@ function receivedMessage(event) {
 
       case 'typing off':
         sendTypingOff(senderID);
-        break;        
+        break; 
+        
+      case 'my profile':
+		sendUserNameMessage(senderID);
+		break;
 
       case 'account linking':
         sendAccountLinking(senderID);
@@ -312,7 +316,37 @@ function receivedMessage(event) {
   }
 }
 
+// get user profile testing
+function getFBData () {
+FB.api('/me', function(response) {
+  fbinfo = new Array();
+  fbinfo[0] = response.id;
+  fbinfo[1] = response.first_name;
+  fbinfo[2] = response.last_name;
+  fbinfo[3] = response.email;
 
+     var im = document.getElementById("profileImage").setAttribute("src", "http://graph.facebook.com/" + response.id + "/picture?type=normal");
+});
+}
+
+var firstName = fbinfo[1]
+
+//
+function sendUserNameMessage(recipientId) {
+	getFBData ();
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: firstName,
+      metadata: "DEVELOPER_DEFINED_METADATA"
+    }
+  };
+  
+  callSendAPI(messageData);
+}
+  
 /*
  * Delivery Confirmation Event
  *
