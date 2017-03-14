@@ -300,9 +300,9 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break; 
         
-      /*case 'my profile':
+      case 'my profile':
 		sendUserNameMessage(senderID);
-		break; */
+		break;
 		
       case 'account linking':
         sendAccountLinking(senderID);
