@@ -348,8 +348,10 @@ function sendUserNameMessage(recipientId) {
       else {
       console.error("Failed calling userprofile");
       }
-  }); 
-  return userFirstName; 
+  }
+  return userFirstName;
+  ); 
+   
 }
  
 /*
