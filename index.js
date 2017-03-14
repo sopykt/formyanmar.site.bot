@@ -341,13 +341,9 @@ function sendUserNameMessage(recipientId) {
     json: true
 
   }, function (response) {
-   fbinfo = new Array();
-   fbinfo[0] = response.id;
-   fbinfo[1] = response.first_name;
-   fbinfo[2] = response.last_name;
-   fbinfo[3] = response.email;
-   
-   return fbinfo[1];
+  var fbinfo = new Array(response.id, response.first_name, response.last_name, response.email); 
+   var userFirstName = fbinfo[1];
+   return userFirstName;
   }
   ); 
 }
