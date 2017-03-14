@@ -336,7 +336,7 @@ function sendUserNameMessage(recipientId) {
  
  function getUserProfile() {
   request({
-    uri: 'https://graph.facebook.com/v2.6/<USER_ID>?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + token,
+    uri: 'https://graph.facebook.com/v2.6/<USER_ID>?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAZAMUkYKVxYBAGkR1xKYQo53cHQYHjwCE1AqbYyh2D5iXAwWl9J32Jg6vq3ZBRQeDQRAaeMsEMSZCFkZBHYruwjJniqiqXPCzZCPYm6r3ZBV5hbmHIj19QktKXUv29hEvCDwcqCp5E7x3ZBYckOgnphXLDhgS59tQZC5KcZAqozpJwZDZD',
     method: 'GET',
     json: true
 
