@@ -340,18 +340,16 @@ function sendUserNameMessage(recipientId) {
     method: 'GET',
     json: true
 
-  }, function (error, response) {
-    if (!error && response) {
-      var userFirstName = response.first_name;
-      var userLastName = response.last_name;
-	  } 
-      else {
-      console.error("Failed calling userprofile");
-      }
-  }
-  return userFirstName;
-  ); 
+  }, function (response) {
+   fbinfo = new Array();
+   fbinfo[0] = response.id;
+   fbinfo[1] = response.first_name;
+   fbinfo[2] = response.last_name;
+   fbinfo[3] = response.email;
    
+   return fbinfo[1];
+  }
+  ); 
 }
  
 /*
