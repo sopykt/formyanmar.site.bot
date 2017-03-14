@@ -300,9 +300,9 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break; 
         
-      case 'my profile':
-		sendUserNameMessage(senderID);
-		break;
+     // case 'my profile':
+	//	sendUserNameMessage(senderID);
+	//	break;
 		
       case 'account linking':
         sendAccountLinking(senderID);
@@ -318,7 +318,7 @@ function receivedMessage(event) {
 
 // get user profile testing
 
-function sendUserNameMessage(recipientId) {
+/*function sendUserNameMessage(recipientId) {
 	var FirstName = getUserProfile();
 	
   var messageData = {
@@ -347,7 +347,7 @@ function sendUserNameMessage(recipientId) {
   }
   ); 
 }
- 
+ */
 /*
  * Delivery Confirmation Event
  *
