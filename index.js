@@ -316,25 +316,41 @@ function receivedMessage(event) {
   }
 }
 
-/* get user profile testing
+// get user profile testing
 
 function sendUserNameMessage(recipientId) {
-	getUserProfile();
+	var FirstName = getUserProfile();
 	
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
-      text: ${user.first_name},
+      text: FirstName,
       metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
   
   callSendAPI(messageData);
 }
- */ 
  
+ function getUserProfile() {
+  request({
+    uri: 'https://graph.facebook.com/v2.6/<USER_ID>?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + token,
+    method: 'GET',
+    json: true
+
+  }, function (error, response) {
+    if (!error && response) {
+      var userFirstName = first_name;
+      var userLastName = last_name;
+	  } 
+      else {
+      console.error("Failed calling userprofile");
+      }
+  }); 
+  return userFirstName; 
+}
  
 /*
  * Delivery Confirmation Event
