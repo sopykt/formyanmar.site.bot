@@ -342,8 +342,8 @@ function sendUserNameMessage(recipientId) {
 
   }, function (error, response) {
     if (!error && response) {
-      var userFirstName = first_name;
-      var userLastName = last_name;
+      var userFirstName = response.first_name;
+      var userLastName = response.last_name;
 	  } 
       else {
       console.error("Failed calling userprofile");
