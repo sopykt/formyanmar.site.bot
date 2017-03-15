@@ -146,18 +146,7 @@ function receivedMessage(event) {
   var timeOfMessage = event.timestamp;
   var message = event.message;
   
-   request({
-    uri: 'https://graph.facebook.com/v2.6/' + senderID + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAZAMUkYKVxYBAGkR1xKYQo53cHQYHjwCE1AqbYyh2D5iXAwWl9J32Jg6vq3ZBRQeDQRAaeMsEMSZCFkZBHYruwjJniqiqXPCzZCPYm6r3ZBV5hbmHIj19QktKXUv29hEvCDwcqCp5E7x3ZBYckOgnphXLDhgS59tQZC5KcZAqozpJwZDZD',
-    method: 'GET',
-    json: true
-
-  }, function (response) {
-  var fbinfo = new Array(response.id, response.first_name, response.last_name, response.email); 
-   var userFirstName = fbinfo[1];
-   return userFirstName;
-  }
-  ); 
-  var firstname = request();
+  
 
   console.log("Received message for user %d and page %d at %d with message:", 
     senderID, recipientID, timeOfMessage);
@@ -314,7 +303,8 @@ function receivedMessage(event) {
         break; 
         
       case 'my profile':
-		sendTextMessage(senderID, firstname);
+		getUserProfile(senderID);
+		sendTextMessage(senderID, userFirstName);
 		break;
 		
       case 'account linking':
@@ -348,11 +338,11 @@ function receivedMessage(event) {
   
   callSendAPI(messageData);
 }
-
- function getUserProfile() {
-	 var senderID = event.sender.id;
+*/
+ function getUserProfile(proID) {
+	
   request({
-    uri: 'https://graph.facebook.com/v2.6/' + senderID + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAZAMUkYKVxYBAGkR1xKYQo53cHQYHjwCE1AqbYyh2D5iXAwWl9J32Jg6vq3ZBRQeDQRAaeMsEMSZCFkZBHYruwjJniqiqXPCzZCPYm6r3ZBV5hbmHIj19QktKXUv29hEvCDwcqCp5E7x3ZBYckOgnphXLDhgS59tQZC5KcZAqozpJwZDZD',
+    uri: 'https://graph.facebook.com/v2.6/' + proID + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAZAMUkYKVxYBAGkR1xKYQo53cHQYHjwCE1AqbYyh2D5iXAwWl9J32Jg6vq3ZBRQeDQRAaeMsEMSZCFkZBHYruwjJniqiqXPCzZCPYm6r3ZBV5hbmHIj19QktKXUv29hEvCDwcqCp5E7x3ZBYckOgnphXLDhgS59tQZC5KcZAqozpJwZDZD',
     method: 'GET',
     json: true
 
@@ -362,7 +352,7 @@ function receivedMessage(event) {
    return userFirstName;
   }
   ); 
-}*/
+}
  
 /*
  * Delivery Confirmation Event
