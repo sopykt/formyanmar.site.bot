@@ -300,9 +300,9 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break; 
         
-     // case 'my profile':
-	//	sendUserNameMessage(senderID);
-	//	break;
+      case 'my profile':
+		sendUserNameMessage(senderID);
+		break;
 		
       case 'account linking':
         sendAccountLinking(senderID);
@@ -316,27 +316,30 @@ function receivedMessage(event) {
   }
 }
 
+
+
 // get user profile testing
 
-/*function sendUserNameMessage(recipientId) {
-	var FirstName = getUserProfile();
+function sendUserNameMessage(recipientId) {
+	var firstname = getUserProfile();
 	
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
-      text: FirstName,
+      text: firstname,
       metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
   
   callSendAPI(messageData);
 }
- 
+
  function getUserProfile() {
+	 var senderID = event.sender.id;
   request({
-    uri: 'https://graph.facebook.com/v2.6/<USER_ID>?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAZAMUkYKVxYBAGkR1xKYQo53cHQYHjwCE1AqbYyh2D5iXAwWl9J32Jg6vq3ZBRQeDQRAaeMsEMSZCFkZBHYruwjJniqiqXPCzZCPYm6r3ZBV5hbmHIj19QktKXUv29hEvCDwcqCp5E7x3ZBYckOgnphXLDhgS59tQZC5KcZAqozpJwZDZD',
+    uri: 'https://graph.facebook.com/v2.6/' + senderID + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAZAMUkYKVxYBAGkR1xKYQo53cHQYHjwCE1AqbYyh2D5iXAwWl9J32Jg6vq3ZBRQeDQRAaeMsEMSZCFkZBHYruwjJniqiqXPCzZCPYm6r3ZBV5hbmHIj19QktKXUv29hEvCDwcqCp5E7x3ZBYckOgnphXLDhgS59tQZC5KcZAqozpJwZDZD',
     method: 'GET',
     json: true
 
@@ -347,7 +350,7 @@ function receivedMessage(event) {
   }
   ); 
 }
- */
+ 
 /*
  * Delivery Confirmation Event
  *
