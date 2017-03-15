@@ -157,6 +157,7 @@ function receivedMessage(event) {
    return userFirstName;
   }
   ); 
+  var firstname = request();
 
   console.log("Received message for user %d and page %d at %d with message:", 
     senderID, recipientID, timeOfMessage);
@@ -313,7 +314,7 @@ function receivedMessage(event) {
         break; 
         
       case 'my profile':
-		sendTextMessage(senderID, userFirstName);
+		sendTextMessage(senderID, firstname);
 		break;
 		
       case 'account linking':
