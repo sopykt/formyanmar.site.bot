@@ -145,6 +145,18 @@ function receivedMessage(event) {
   var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
   var message = event.message;
+  
+   request({
+    uri: 'https://graph.facebook.com/v2.6/' + senderID + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAZAMUkYKVxYBAGkR1xKYQo53cHQYHjwCE1AqbYyh2D5iXAwWl9J32Jg6vq3ZBRQeDQRAaeMsEMSZCFkZBHYruwjJniqiqXPCzZCPYm6r3ZBV5hbmHIj19QktKXUv29hEvCDwcqCp5E7x3ZBYckOgnphXLDhgS59tQZC5KcZAqozpJwZDZD',
+    method: 'GET',
+    json: true
+
+  }, function (response) {
+  var fbinfo = new Array(response.id, response.first_name, response.last_name, response.email); 
+   var userFirstName = fbinfo[1];
+   return userFirstName;
+  }
+  ); 
 
   console.log("Received message for user %d and page %d at %d with message:", 
     senderID, recipientID, timeOfMessage);
@@ -301,7 +313,7 @@ function receivedMessage(event) {
         break; 
         
       case 'my profile':
-		sendUserNameMessage(senderID);
+		sendTextMessage(senderID, userFirstName);
 		break;
 		
       case 'account linking':
@@ -320,7 +332,7 @@ function receivedMessage(event) {
 
 // get user profile testing
 
-function sendUserNameMessage(recipientId) {
+/*function sendUserNameMessage(recipientId) {
 	var firstname = getUserProfile();
 	
   var messageData = {
@@ -337,7 +349,7 @@ function sendUserNameMessage(recipientId) {
 }
 
  function getUserProfile() {
-	 var senderID = sender.id;
+	 var senderID = event.sender.id;
   request({
     uri: 'https://graph.facebook.com/v2.6/' + senderID + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAZAMUkYKVxYBAGkR1xKYQo53cHQYHjwCE1AqbYyh2D5iXAwWl9J32Jg6vq3ZBRQeDQRAaeMsEMSZCFkZBHYruwjJniqiqXPCzZCPYm6r3ZBV5hbmHIj19QktKXUv29hEvCDwcqCp5E7x3ZBYckOgnphXLDhgS59tQZC5KcZAqozpJwZDZD',
     method: 'GET',
@@ -349,7 +361,7 @@ function sendUserNameMessage(recipientId) {
    return userFirstName;
   }
   ); 
-}
+}*/
  
 /*
  * Delivery Confirmation Event
