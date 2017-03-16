@@ -233,7 +233,7 @@ function receivedMessage(event) {
       
       case 'hi':
 	  case 'hello':
-		sendTextMessage(senderID, "Hi This is Test Bot");
+		sendTextMessage(senderID, "Hi. Nice to meet you. This is Test Bot");
 		break;
 		
 	  case 'link':
