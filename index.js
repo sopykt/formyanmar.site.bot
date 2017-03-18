@@ -456,11 +456,11 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break; 
         
-     /* case 'my profile':
-		getUserProfile(senderID);
+      case 'my profile':
+		getUserProfile();
 		sendTextMessage(senderID, userFirstName);
 		break;
-	*/	
+		
       case 'account linking':
         sendAccountLinking(senderID);
         break;
@@ -493,10 +493,11 @@ function receivedMessage(event) {
   callSendAPI(messageData);
 }
 */
- /*function getUserProfile(proID) {
+ function getUserProfile() {
 	
   request({
-    uri: 'https://graph.facebook.com/v2.6/' + proID + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=EAAZAMUkYKVxYBAGkR1xKYQo53cHQYHjwCE1AqbYyh2D5iXAwWl9J32Jg6vq3ZBRQeDQRAaeMsEMSZCFkZBHYruwjJniqiqXPCzZCPYm6r3ZBV5hbmHIj19QktKXUv29hEvCDwcqCp5E7x3ZBYckOgnphXLDhgS59tQZC5KcZAqozpJwZDZD',
+    uri: 'https://graph.facebook.com/v2.6/me?fields=first_name,last_name,profile_pic,locale,timezone,gender',
+    qs: { access_token: token },
     method: 'GET',
     json: true
 
@@ -507,7 +508,7 @@ function receivedMessage(event) {
   }
   ); 
 }
- */
+ 
 /*
  * Delivery Confirmation Event
  *
