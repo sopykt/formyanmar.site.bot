@@ -334,6 +334,13 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
         
+      case 'blood collection tubes':
+      case 'blood tubes':
+      case 'blood collection tube':
+      case 'blood tube':
+        sendBloodTubeGenericMessage(senderID);
+        break;
+        
 	  case 'test generic':
 		sendTestGenericMessage(senderID);
 		break;
@@ -829,6 +836,37 @@ function sendGenericMessage(recipientId) {
               title: "Call Postback",
               payload: "Payload for second bubble",
             }]
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+//sendBloodTubeGenericMessage
+
+function sendBloodTubeGenericMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "Common Blood Collection Tube",
+            subtitle: "their additives and laboratory uses.",
+            item_url: "http://www.medcyclopedia.net/common-blood-collection-tubes-their-additives-and-laboratory-uses/",               
+            image_url: SERVER_URL + "/bt/blood-tubes.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "http://www.medcyclopedia.net/common-blood-collection-tubes-their-additives-and-laboratory-uses/",
+              title: "View on Web"
+            }],
           }]
         }
       }
