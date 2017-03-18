@@ -230,6 +230,10 @@ function receivedMessage(event) {
         case 'test image':
         sendTestImageMessage(senderID, "/assets/rift.png");
         break;
+        
+        case 'amiodarone':
+        sendTestImageMessage(senderID, "/idd/amiodarone.jpg");
+        break;
       
       case 'hi':
 	  case 'hello':
