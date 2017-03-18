@@ -220,6 +220,22 @@ function receivedMessage(event) {
       case 'Type2_DM_Chart':
 		sendTestImageMessage(senderID, "/dm/type2-dm.jpg");
         break;
+        
+      case 'Gross_Motor_Developmental_Milestones':
+		sendTestImageMessage(senderID, "");
+		break;
+		
+	  case 'Fine_Motor_Developmental_Milestones':
+		sendTestImageMessage(senderID, "");
+		break;
+		
+	  case 'Social_Developmental_Milestones':
+		sendTestImageMessage(senderID, "");
+		break;
+		
+	  case 'Language_Developmental_Milestones':
+		sendTestImageMessage(senderID, "");
+		break;
 	}
 		//sendTextMessage(senderID, "Quick reply tapped");
     return;
@@ -357,7 +373,7 @@ function receivedMessage(event) {
         sendGifMessage(senderID);
         break;
 
-		case 'audio':
+	  case 'audio':
 	  case 'sound':
         sendAudioMessage(senderID);
         break;
@@ -402,6 +418,11 @@ function receivedMessage(event) {
       case 'quick reply':
         sendQuickReply(senderID);
         break;
+        
+      case 'milestones':
+      case 'developmental milestones':
+		sendMilestonesQuickReply(senderID);
+		break;
         
       case 'diabetes':
 		sendDiabetesQuickReply(senderID);
@@ -1116,6 +1137,42 @@ function sendQuickReply(recipientId) {
           "content_type":"text",
           "title":"Drama",
           "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+//developmental milestones quick reply
+function sendMilestonesQuickReply(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "Which one?",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Gross motor",
+          "payload":"Gross_Motor_Developmental_Milestones"
+        },
+        {
+          "content_type":"text",
+          "title":"Fine motor",
+          "payload":"Fine_Motor_Developmental_Milestones"
+        },
+        {
+          "content_type":"text",
+          "title":"Social & Adaptive",
+          "payload":"Social_Developmental_Milestones"
+        },
+        {
+          "content_type":"text",
+          "title":"Language",
+          "payload":"Language_Developmental_Milestones"
         }
       ]
     }
