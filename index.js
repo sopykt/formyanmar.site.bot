@@ -374,6 +374,7 @@ function receivedMessage(event) {
       case 'blood tubes':
       case 'blood collection tube':
       case 'blood tube':
+      case 'test tubes':
         sendBloodTubeGenericMessage(senderID);
         break;
         
