@@ -12,6 +12,8 @@ const app = express()
 const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN)
 const SERVER_URL = (process.env.SERVER_URL)
 const token = (process.env.MESSENGER_PAGE_ACCESS_TOKEN)
+//const connect = require('connect')
+const serveStatic = require('serve-static')
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -26,9 +28,18 @@ app.get('/', function (req, res) {
 	res.send('hello world i am a secret bot')
 })
 
-app.get('/assets/', function (req, res)	{
-	res.send(./public/assets)
-})
+//servestatic fot assets
+app.use(serveStatic(__dirname + '/public', {
+  maxAge: '1d',
+  setHeaders: setCustomCacheControl
+}))
+
+function setCustomCacheControl (res, path) {
+  if (serveStatic.mime.lookup(path) === 'text/html') {
+    // Custom Cache-Control for HTML files
+    res.setHeader('Cache-Control', 'public, max-age=0')
+  }
+}
 
 // for facebook verification
 app.get('/webhook/', function (req, res) {
