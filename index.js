@@ -27,7 +27,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/assets/', function (req, res)	{
-	res.send(./assets)
+	res.send(./public/assets)
 })
 
 // for facebook verification
