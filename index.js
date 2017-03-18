@@ -182,8 +182,38 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Additive: None or contains silica particles which act as clot activators. \nWhat additive does: Clot activator promotes blood clotting with glass or silica particles. \nLaboratory Uses: Serum testing (glucose, cholesterol, triglycerides, HDL, potassium, amylase, alkaline phosphatase, BUN, CK, liver enzymes), blood bank, serology (RH Typing, Antibody screening, Red Cell Phototyping, DAT, RPR, monospot, rheumatoid factor, ANA)");
 		break;
 		
+	  case 'Yellow_Blood_Tubes':
+		sendTextMessage(senderID, "Additive: anticoagulant SPS (Sodium Polyanetholsulfonate) & ACD (acid citrate dextrose) \nWhat additive does: Prevents the blood from clotting and stabilizes bacterial growth. \nLaboratory Uses: Blood and bodily fluid cultures (HLA, DNA, Paternity) Tubes with SPS – For Blood and bodily fluid cultures (HLA, DNA, Paternity). The SPS aids in the recovery of microorganisms by slowing down\/ stopping the actions of complement, phagocytes, and certain antibiotics. Tubes with ACD are for cellular studies, HLA typing, paternity testing.");
+		break;
+
+	  case 'Light_Blue_Blood_Tubes':
+		sendTextMessage(senderID, "The blue bottle is used for haematology tests involving the clotting system, which require inactivated whole blood for analysis.");
+		sendTextMessage(senderID, "Additive: Sodium Citrate \nWhat additive does: Binds and remove calcium to prevent blood from clotting \nLaboratory uses: Coagulation (clotting process-P.T) PT (Prothrombin Time – evaluates the extrinsic system of the coagulation cascade & monitors coumadin therapy) APTT/ PTT (Activated Partial Thromboplastin Time – evaluates the intrinsic system of the coagulation cascade & monitors heparin therapy) FDP (Fibrinogen Degradation Products) TT (Thrombin Time) Factor assays");
+		break;
+		
+	  case 'Green_Blood_Tubes':
+		sendTextMessage(senderID, "This less commonly used bottle is for biochemistry tests which require heparinised plasma or whole blood for analysis.");
+		sendTextMessage(senderID, "Additive: Heparin (Sodium/Lithium/Ammonium) \nWhat additive does: Inhibits thrombin formation to prevent clotting \nLaboratory uses: Chemistry Testing (Plasma determinations in chemistry) : ammonia, carboxyhemoglobin & STAT electrolytes, chromosome screening, insulin, renin and aldosterone");
+		break;
+		
+	  case 'Lavender_Blood_Tubes':
+		sendTextMessage(senderID, "These bottles are generally used for haematology tests where whole blood is required for analysis.");
+		sendTextMessage(senderID, "Additive: EDTA (Ethylenediaminetetraacetic Acid) \nWhat additive does: Removes calcium preventing clotting of blood \nLaboratory uses: Hematology testing (ESR, CBC w/diff., HgBA1c) blood film for abnormal cells or malaria parasites, reticulocytes, red cell folate, Monospot test for EBV, parathyroid hormone (PTH)");
+		break;
+		
+	  case 'Grey_Blood_Tubes':
+		sendTextMessage(senderID, "Additive: Potassium oxalate and Sodium fluoride \nWhat additive does: Sodium fluoride acts as an antiglycolytic agent to ensure that no further glucose breakdown occurs within the sample after it is taken. Potassium oxalate removes calcium and acts as an anticoagulant. \nLaboratory uses: Chemistry testing, especially glucose(sugar) and lactate, Glucose tolerance test (GTT)");
+		break;
+		
+	  case 'Royal_Blue_Blood_Tubes':
+		sendTextMessage(senderID, "Additive: Sodium Heparin also Sodium EDTA \nWhat additive does: Inhibits Thrombin formation to prevent \nLaboratory uses: Chemistry trace elements (such as Zinc, Copper, Lead and Mercury), toxicology, and nutritional chemistry testing");
+		break;
+		
+	  case 'Black_Blood_Tubes':
+		sendTextMessage(senderID, "Additive: Sodium Citrate \nWhat additive does: Forms calcium salts to remove calcium \nLaboratory uses: paediatric ESR");
+		break;		
 	}
-		sendTextMessage(senderID, "Quick reply tapped");
+		//sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
 
