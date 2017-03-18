@@ -24,9 +24,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 // index
-app.get('/', function (req, res) {
-	res.send('hello world i am a secret bot')
-})
+//app.get('/', function (req, res) {
+//	res.send('hello world i am a secret bot')
+//})
 
 //servestatic fot assets
 app.use(serveStatic(__dirname + '/public', {
