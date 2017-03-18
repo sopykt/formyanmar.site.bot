@@ -211,7 +211,15 @@ function receivedMessage(event) {
 		
 	  case 'Black_Blood_Tubes':
 		sendTextMessage(senderID, "Additive: Sodium Citrate \nWhat additive does: Forms calcium salts to remove calcium \nLaboratory uses: paediatric ESR");
-		break;		
+		break;	
+		
+	  case 'Type1_DM_Chart':
+		sendTestImageMessage(senderID, "/dm/type1-dm.jpg");
+        break;
+        
+      case 'Type2_DM_Chart':
+		sendTestImageMessage(senderID, "/dm/type2-dm.jpg");
+        break;
 	}
 		//sendTextMessage(senderID, "Quick reply tapped");
     return;
@@ -375,6 +383,7 @@ function receivedMessage(event) {
       case 'blood collection tube':
       case 'blood tube':
       case 'test tubes':
+      case 'test tube':
         sendBloodTubeGenericMessage(senderID);
         break;
         
@@ -388,7 +397,11 @@ function receivedMessage(event) {
 
       case 'quick reply':
         sendQuickReply(senderID);
-        break;        
+        break;
+        
+      case 'diabetes':
+		sendDiabetesQuickReply(senderID);
+		break;
 
       case 'read receipt':
         sendReadReceipt(senderID);
@@ -1099,6 +1112,32 @@ function sendQuickReply(recipientId) {
           "content_type":"text",
           "title":"Drama",
           "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+//sendDiabetesQuickReply
+function sendDiabetesQuickReply(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "What type of Diabetes",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Type 1",
+          "payload":"Type1_DM_Chart"
+        },
+        {
+          "content_type":"text",
+          "title":"Type 2",
+          "payload":"Type2_DM_Chart"
         }
       ]
     }
