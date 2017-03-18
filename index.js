@@ -368,6 +368,7 @@ function receivedMessage(event) {
         
       case 'tracheostomy':
 		sendVideoMessage(senderID, "/vid/tracheostomy.mp4");
+		break;
 
 	  case 'file':
         sendFileMessage(senderID);
