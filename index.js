@@ -26,6 +26,10 @@ app.get('/', function (req, res) {
 	res.send('hello world i am a secret bot')
 })
 
+app.get('/assets/', function (req, res)	{
+	res.send(./assets)
+})
+
 // for facebook verification
 app.get('/webhook/', function (req, res) {
 	if (req.query['hub.verify_token'] === VALIDATION_TOKEN) {
