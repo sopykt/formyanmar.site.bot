@@ -436,7 +436,7 @@ function receivedMessage(event) {
         
       case 'milestones':
       case 'developmental milestones':
-		sendTestImageMessage(senderID, "/developmental-milestones/gross-motor-milestones1.jpg");
+		//sendTestImageMessage(senderID, "/developmental-milestones/gross-motor-milestones1.jpg");
 		sendMilestonesQuickReply(senderID);
 		break;
         
