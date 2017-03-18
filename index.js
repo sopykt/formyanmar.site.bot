@@ -245,11 +245,11 @@ function receivedMessage(event) {
 		break;
 		
 	  case 'Social_Developmental_Milestones':
-		sendTestImageMessage(senderID, "/developmental-milestones/social-motor-milestones.jpg");
+		sendTestImageMessage(senderID, "/developmental-milestones/social-milestones.jpg");
 		break;
 		
 	  case 'Language_Developmental_Milestones':
-		sendTestImageMessage(senderID, "/developmental-milestones/language-motor-milestones.jpg");
+		sendTestImageMessage(senderID, "/developmental-milestones/language-milestones.jpg");
 		break;
 	}
 		//sendTextMessage(senderID, "Quick reply tapped");
