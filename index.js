@@ -363,8 +363,11 @@ function receivedMessage(event) {
         break;
 
 	  case 'video':
-        sendVideoMessage(senderID);
+        sendVideoMessage(senderID, "/assets/allofus480.mov");
         break;
+        
+      case 'tracheostomy':
+		sendVideoMessage(senderID, "/vid/tracheostomy.mp4");
 
 	  case 'file':
         sendFileMessage(senderID);
@@ -693,9 +696,9 @@ function sendAudioMessage(recipientId) {
 
 /*
  * Send a video using the Send API.
- *
+ * /assets/allofus480.mov
  */
-function sendVideoMessage(recipientId) {
+function sendVideoMessage(recipientId, videourl) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -704,7 +707,7 @@ function sendVideoMessage(recipientId) {
       attachment: {
         type: "video",
         payload: {
-          url: SERVER_URL + "/assets/allofus480.mov"
+          url: SERVER_URL + videourl
         }
       }
     }
