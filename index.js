@@ -237,19 +237,19 @@ function receivedMessage(event) {
         break;
         
       case 'Gross_Motor_Developmental_Milestones':
-		sendTestImageMessage(senderID, "");
+		sendTestImageMessage(senderID, "/developmental-milestones/gross-motor-milestones2.jpg");
 		break;
 		
 	  case 'Fine_Motor_Developmental_Milestones':
-		sendTestImageMessage(senderID, "");
+		sendTestImageMessage(senderID, "/developmental-milestones/fine-motor-milestones.jpg");
 		break;
 		
 	  case 'Social_Developmental_Milestones':
-		sendTestImageMessage(senderID, "");
+		sendTestImageMessage(senderID, "/developmental-milestones/social-motor-milestones.jpg");
 		break;
 		
 	  case 'Language_Developmental_Milestones':
-		sendTestImageMessage(senderID, "");
+		sendTestImageMessage(senderID, "/developmental-milestones/language-motor-milestones.jpg");
 		break;
 	}
 		//sendTextMessage(senderID, "Quick reply tapped");
@@ -436,6 +436,7 @@ function receivedMessage(event) {
         
       case 'milestones':
       case 'developmental milestones':
+		sendTestImageMessage(senderID, "/developmental-milestones/gross-motor-milestones1.jpg");
 		sendMilestonesQuickReply(senderID);
 		break;
         
