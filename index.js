@@ -176,6 +176,12 @@ function receivedMessage(event) {
 	  case 'DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY':
 		sendTextMessage(senderID, "comedy choosed");
 		break;
+		
+	  case 'Red_Blood_Tubes':
+		sendTextMessage(senderID, "The red bottle is less common – it is used for biochemistry tests requiring serum which might be adversely affected by the separator gel used in the yellow bottle.");
+		sendTextMessage(senderID, "Additive: None or contains silica particles which act as clot activators. \nWhat additive does: Clot activator promotes blood clotting with glass or silica particles. \nLaboratory Uses: Serum testing (glucose, cholesterol, triglycerides, HDL, potassium, amylase, alkaline phosphatase, BUN, CK, liver enzymes), blood bank, serology (RH Typing, Antibody screening, Red Cell Phototyping, DAT, RPR, monospot, rheumatoid factor, ANA)");
+		break;
+		
 	}
 		sendTextMessage(senderID, "Quick reply tapped");
     return;
@@ -873,18 +879,43 @@ function sendBloodTubeGenericMessage(recipientId) {
       quick_replies: [
         {
           "content_type":"text",
-          "title":"Action",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
+          "title":"Red",
+          "payload":"Red_Blood_Tubes"
         },
         {
           "content_type":"text",
-          "title":"Comedy",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+          "title":"Yellow",
+          "payload":"Yellow_Blood_Tubes"
         },
         {
           "content_type":"text",
-          "title":"Drama",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+          "title":"Light Blue",
+          "payload":"Light_Blue_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Green",
+          "payload":"Green_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Lavender",
+          "payload":"Lavender_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Grey",
+          "payload":"Grey_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Royal Blue",
+          "payload":"Royal_Blue_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Black",
+          "payload":"Black_Blood_Tubes"
         }
       ]
     }
