@@ -200,7 +200,7 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nTake preferably between meals\. \nAlso comes in 250 mg/5 ml powder for oral suspension\. \nStorage\: below 25°C \nFor the oral suspension \(powder or reconstituted suspension\)\: \nfollow manufacturer\’s instructions");
 		break;
 		
-		case 'cefixime':
+	  case 'cefixime':
 		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nThird-generation cephalosporin antibacterial");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nTyphoid fever in children \nAcute cystitis in girls over 2 years\, pregnant women and lactating women \nAcute pyelonephritis in adults \nCervicitis and urethritis due to Neisseria gonorrhoeae \(in combination with a treatment for chlamydia\)");
 		sendTextMessage(senderID, "Presentation \n💊💊💊💊💊💊 \n200 mg tablet \n100 mg/5 ml powder for oral suspension\, to be reconstituted with filtered water");
@@ -210,9 +210,9 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nAlso comes in 400 mg capsules \nStorage: below 25°C \nFor the oral suspension \(powder or reconstituted suspension\): follow manufacturer\’s instructions\.");
 		break;
 		
-		case 'chlorphenamine':
-		case 'chlorpheniramine':
-		case 'burmeton':
+	  case 'chlorphenamine':
+	  case 'chlorpheniramine':
+	  case 'burmeton':
 		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nSedating antihistamine");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nSymptomatic treatment of minor allergic reactions \(contact dermatitis\, seasonal allergy\, allergy to drugs\, food\, etc\.\)");
 		sendTextMessage(senderID, "Presentation \n💊💊💊💊💊💊 \n4 mg tablet \nAlso comes in 2 mg/5 ml oral solution");
@@ -227,15 +227,67 @@ function receivedMessage(event) {
         sendTestButtonMessage(senderID);
         break;
         
-        case 'test image':
+      case 'test image':
         sendTestImageMessage(senderID, "/assets/rift.png");
         break;
         
-        case 'amiodarone':
+      case 'amiodarone':
         sendTestImageMessage(senderID, "/idd/amiodarone.jpg");
         break;
       
-      case 'hi':
+	  case 'dobutamine':
+        sendTestImageMessage(senderID, "/idd/dobutamine.jpg");
+        break;
+        
+      case 'dopamine':
+        sendTestImageMessage(senderID, "/idd/dopamine.jpg");
+        break;
+        
+      case 'fentanyl':
+        sendTestImageMessage(senderID, "/idd/fentanyl.jpg");
+        break;
+        
+      case 'heparin':
+        sendTestImageMessage(senderID, "/idd/heparin.jpg");
+        break;
+      
+      case 'insulin':
+        sendTestImageMessage(senderID, "/idd/insulin.jpg");
+        break;
+      
+      case 'labetalol':
+        sendTestImageMessage(senderID, "/idd/labetalol.jpg");
+        break;
+      
+      case 'lasix':
+        sendTestImageMessage(senderID, "/idd/lasix.jpg");
+        break;
+        
+      case 'midazolam':
+        sendTestImageMessage(senderID, "/idd/midazolam.jpg");
+        break;
+      
+      case 'nitroglycerine':
+        sendTestImageMessage(senderID, "/idd/nitroglycerine.jpg");
+        break;
+      
+      case 'octreotide':
+        sendTestImageMessage(senderID, "/idd/octreotide.jpg");
+        break;
+      
+      case 'phenytoin':
+        sendTestImageMessage(senderID, "/idd/phenytoin.jpg");
+        break;
+      
+      case 'propofol':
+        sendTestImageMessage(senderID, "/idd/propofol.jpg");
+        break;
+        
+      case 'vasopressin':
+        sendTestImageMessage(senderID, "/idd/vasopressin.jpg");
+        break;
+      
+	  case 'hi':
 	  case 'hello':
 		sendTextMessage(senderID, "Hi. Nice to meet you. This is Test Bot");
 		break;
@@ -257,24 +309,24 @@ function receivedMessage(event) {
         sendImageMessage(senderID);
         break;
 
-      case 'gif':
+	  case 'gif':
         sendGifMessage(senderID);
         break;
 
-      case 'audio':
+		case 'audio':
 	  case 'sound':
         sendAudioMessage(senderID);
         break;
 
-      case 'video':
+	  case 'video':
         sendVideoMessage(senderID);
         break;
 
-      case 'file':
+	  case 'file':
         sendFileMessage(senderID);
         break;
 
-      case 'button':
+	  case 'button':
         sendButtonMessage(senderID);
         break;
 
