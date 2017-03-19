@@ -1400,6 +1400,36 @@ function callSendAPI(messageData) {
 	
 	setPersistentMenu();
 */
+
+//get started button
+function GetStartedButton()	{
+	request({
+		uri: 'https://graph.facebook.com/v2.6/me/messenger_profile',
+		qs: {access_token: token},
+		method: 'POST',
+		json: { 
+  "get_started":{
+    "payload":"GET_STARTED_PAYLOAD"
+  }
+}
+		},	function (error, response, body)	{
+			var resultjson = body.result;
+		//	if (error)	{
+		//		console.error("error setting persistent menu");
+		//		} else {
+		//			console.log("persistent menu successfully set with %s result", resultjson);
+		//			}
+			
+			if (!error && response.statusCode == 200)	{
+				console.log("persistent menu successfully set with %s result", resultjson);
+				} else {
+					console.error("error setting persistent menu");
+					}
+			}
+	);
+	}
+
+GetStartedButton();
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
