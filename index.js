@@ -1335,7 +1335,7 @@ function callSendAPI(messageData) {
 }
 
 //post persistent menu
-/*function setPersistentMenu()	{
+function setPersistentMenu()	{
 	request({
 		uri: 'https://graph.facebook.com/v2.6/me/messenger_profile',
 		qs: {access_token: token},
@@ -1383,23 +1383,23 @@ function callSendAPI(messageData) {
 }
 		},	function (error, response, body)	{
 			var resultjson = body.result;
-			if (error)	{
-				console.error("error setting persistent menu");
-				} else {
-					console.log("persistent menu successfully set with %s result", resultjson);
-					}
-			
-	//		if (!error && response.statusCode == 200)	{
-	//			console.log("persistent menu successfully set with %s result", resultjson);
+	//		if (error)	{
+	//			console.error("error setting persistent menu");
 	//			} else {
-	//				console.error("error setting persistent menu");
+	//				console.log("persistent menu successfully set with %s result", resultjson);
 	//				}
+			
+			if (!error && response.statusCode == 200)	{
+				console.log("persistent menu successfully set with %s result", resultjson);
+				} else {
+					console.error("error setting persistent menu");
+					}
 			}
 	);
 	}
 	
-	setPersistentMenu();
-*/
+setPersistentMenu();
+
 
 //get started button
 function GetStartedButton()	{
@@ -1421,9 +1421,9 @@ function GetStartedButton()	{
 		//			}
 			
 			if (!error && response.statusCode == 200)	{
-				console.log("persistent menu successfully set with %s result", resultjson);
+				console.log("get started button successfully set with %s result", resultjson);
 				} else {
-					console.error("error setting persistent menu");
+					console.error("error setting get started button");
 					}
 			}
 	);
