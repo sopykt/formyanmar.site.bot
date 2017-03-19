@@ -1335,12 +1335,12 @@ function callSendAPI(messageData) {
 }
 
 //post persistent menu
-/*function setPersistentMenu()	{
+function setPersistentMenu()	{
 	request({
 		uri: 'https://graph.facebook.com/v2.6/me/messenger_profile',
 		qs: {access_token: token},
 		method: 'POST',
-		jason: {
+		json: {
   "persistent_menu":[
     {
       "locale":"default",
@@ -1382,9 +1382,9 @@ function callSendAPI(messageData) {
   ]
 }
 		},	function (error, response, body)	{
-			var resultjason = body.result;
+			var resultjson = body.result;
 			if (!error && response.statusCode == 200)	{
-				console.log("persistent menu successfully set with %s result", resultjason);
+				console.log("persistent menu successfully set with %s result", resultjson);
 				} else {
 					console.error("error setting persistent menu");
 					}
@@ -1393,7 +1393,7 @@ function callSendAPI(messageData) {
 	}
 	
 	setPersistentMenu();
-*/
+
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
