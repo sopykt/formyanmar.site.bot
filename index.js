@@ -1379,9 +1379,10 @@ function setPersistentMenu()	{
     }
   ]
 }
-		},	function (error, response)	{
-			if (!error && response.result == success)	{
-				console.log("persistent menu successfully set");
+		},	function (error, response, body)	{
+			var resultjason = body.result;
+			if (!error && response.statusCode == 200)	{
+				console.log("persistent menu successfully set with %s result", resultjason);
 				} else {
 					console.error("error setting persistent menu");
 					}
