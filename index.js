@@ -1383,11 +1383,17 @@ function setPersistentMenu()	{
 }
 		},	function (error, response, body)	{
 			var resultjson = body.result;
-			if (!error && response.statusCode == 200)	{
-				console.log("persistent menu successfully set with %s result", resultjson);
+			if (error)	{
+				console.error("error setting persistent menu");
 				} else {
-					console.error("error setting persistent menu");
+					console.log("persistent menu successfully set with %s result", resultjson);
 					}
+			
+	//		if (!error && response.statusCode == 200)	{
+	//			console.log("persistent menu successfully set with %s result", resultjson);
+	//			} else {
+	//				console.error("error setting persistent menu");
+	//				}
 			}
 	);
 	}
