@@ -458,10 +458,10 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break; 
         
-   //   case 'my profile':
-	//	getUserProfile();
-	//	sendTextMessage(senderID, userFirstName);
-	//	break;
+      case 'my profile':
+		getUserProfile();
+		sendTextMessage(senderID, userFirstName);
+		break;
 		
       case 'account linking':
         sendAccountLinking(senderID);
@@ -495,7 +495,7 @@ function receivedMessage(event) {
   callSendAPI(messageData);
 }
 */
-/* function getUserProfile() {
+ function getUserProfile() {
 	
   request({
     uri: 'https://graph.facebook.com/v2.6/me?fields=first_name,last_name,profile_pic,locale,timezone,gender',
@@ -503,14 +503,14 @@ function receivedMessage(event) {
     method: 'GET',
     json: true
 
-  }, function (response) {
-  var fbinfo = new Array(response.id, response.first_name, response.last_name, response.email); 
-   var userFirstName = fbinfo[1];
+  }, function (error, response, body) {
+  var fbinfo = new Array(body.first_name, body.last_name, body.profile_pic); 
+   var userFirstName = fbinfo[0];
    return userFirstName;
   }
   ); 
 }
- */
+ 
 /*
  * Delivery Confirmation Event
  *
