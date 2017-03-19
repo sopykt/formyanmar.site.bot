@@ -1335,7 +1335,7 @@ function callSendAPI(messageData) {
 }
 
 //post persistent menu
-function setPersistentMenu()	{
+/*function setPersistentMenu()	{
 	request({
 		uri: 'https://graph.facebook.com/v2.6/me/messenger_profile',
 		qs: {access_token: token},
@@ -1399,10 +1399,10 @@ function setPersistentMenu()	{
 	}
 	
 setPersistentMenu();
-
+*/
 
 //get started button
-function GetStartedButton()	{
+/*function GetStartedButton()	{
 	request({
 		uri: 'https://graph.facebook.com/v2.6/me/messenger_profile',
 		qs: {access_token: token},
@@ -1430,6 +1430,8 @@ function GetStartedButton()	{
 	}
 
 GetStartedButton();
+*/
+
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
