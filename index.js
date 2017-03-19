@@ -15,6 +15,8 @@ const token = (process.env.MESSENGER_PAGE_ACCESS_TOKEN)
 //const connect = require('connect')
 const serveStatic = require('serve-static')
 
+
+
 app.set('port', (process.env.PORT || 5000))
 
 // parse application/x-www-form-urlencoded
@@ -1333,7 +1335,7 @@ function callSendAPI(messageData) {
 }
 
 //post persistent menu
-function setPersistentMenu()	{
+/*function setPersistentMenu()	{
 	request({
 		uri: 'https://graph.facebook.com/v2.6/me/messenger_profile',
 		qs: {access_token: token},
@@ -1391,7 +1393,7 @@ function setPersistentMenu()	{
 	}
 	
 	setPersistentMenu();
-
+*/
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
