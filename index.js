@@ -265,6 +265,10 @@ function receivedMessage(event) {
     // the text we received.
     switch (messageText.toLowerCase()) {
       
+      case 'help':
+		sendGetStartedQuickReply(senderID);
+		break;
+      
       case 'cephalexin':
       case 'cefalexin':
 		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nFirst-generation cephalosporin antibacterial"); 
