@@ -558,7 +558,8 @@ function receivedPostback(event) {
     
     // test payload for test button
     if (payload) {
-		switch (payload) {
+	  
+	 switch (payload) {
 	  case 'testing_postback_button_was_clicked':
 		sendTextMessage(senderID, "testing sucessful");
 		break;
@@ -589,12 +590,15 @@ function receivedPostback(event) {
 	  case 'Milestones_Payload':
 		sendMilestonesQuickReply(senderID);
 		break;
+		
+	  default:
+        sendTextMessage(senderID, "Postback called");
 	}
 		}
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
+  
 }
 
 /*
