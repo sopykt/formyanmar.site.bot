@@ -30,7 +30,7 @@ app.use(bodyParser.json())
 //	res.send('hello world i am a secret bot')
 //})
 
-//servestatic fot assets
+//servestatic for assets
 app.use(serveStatic(__dirname + '/public', {
   maxAge: '1d',
   setHeaders: setCustomCacheControl
@@ -561,6 +561,10 @@ function receivedPostback(event) {
 		switch (payload) {
 	  case 'testing_postback_button_was_clicked':
 		sendTextMessage(senderID, "testing sucessful");
+		break;
+		
+		case 'GET_STARTED_PAYLOAD':
+		sendTextMessage(senderID, "Welcome to developbot\! \nYou can now ask Bot like \"cephalexin\"\, \"Propofol\"\, \"Diabetes\"\, \"Hi\"\, \"Test tubes\"\, \"Milestones\"");
 		break;
 	}
 		}
