@@ -5,6 +5,7 @@ i have added console.log on line 48
  */
 'use strict'
 
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -17,7 +18,7 @@ const serveStatic = require('serve-static')
 
 
 
-app.set('port', (process.env.PORT || 5000))
+app.set('port', (process.env.PORT || 3000))
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}))
