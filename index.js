@@ -304,7 +304,11 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Contra-indications, adverse effects, precautions \n💣💣💣💣💣 \nDo not administer to patients with allergy to cephalosporin\. \nAdminister with caution to patients with allergy to penicillin \(cross-sensitivity may occur\) and severe renal impairment \(reduce the dose\)\. \nMay cause: gastrointestinal disturbances \(particularly diarrhoea\)\, allergic reactions \(skin eruption\, fever\, pruritus\)\. \nPregnancy: \nno contra-indication \nBreast-feeding: \nno contra-indication");
 		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nTake preferably between meals\. \nAlso comes in 250 mg/5 ml powder for oral suspension\. \nStorage\: below 25°C \nFor the oral suspension \(powder or reconstituted suspension\)\: \nfollow manufacturer\’s instructions");
 		break;
-		
+
+	case 'ygh-opd':
+	case 'ygh opd':
+		sendTestImageMessage(senderID, "/yghopd/ygh-opd.jpg");
+		break;		
 	  case 'cefixime':
 		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nThird-generation cephalosporin antibacterial");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nTyphoid fever in children \nAcute cystitis in girls over 2 years\, pregnant women and lactating women \nAcute pyelonephritis in adults \nCervicitis and urethritis due to Neisseria gonorrhoeae \(in combination with a treatment for chlamydia\)");
