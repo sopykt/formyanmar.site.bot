@@ -315,7 +315,7 @@ function receivedMessage(event) {
 		break;
 
 	case 'honey':
-		sendTestImageMessage(senderID, "/recording/Apr-24-1-25-PM-Honey-MWD.mp3");
+		sendTestAudioMessage(senderID, "/recording/Apr-24-1-25-PM-Honey-MWD.mp3");
 		break;
 
 	  case 'cefixime':
@@ -782,6 +782,25 @@ function sendAudioMessage(recipientId) {
   };
 
   callSendAPI(messageData);
+}
+
+// this is test sendaudio function
+function sendTestAudioMessage(recipientId, audiourl)	{
+	var messageData = {
+		recipient: {
+			id: recipientId
+		},
+		message: {
+			attachment:{
+				type:"audio",
+				payload:{
+					url:SERVER_URL+auiodurl
+				}
+			}
+		}
+	};
+	
+	callSendAPI(messageData);
 }
 
 /*
