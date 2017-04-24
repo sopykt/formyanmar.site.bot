@@ -794,7 +794,7 @@ function sendTestAudioMessage(recipientId, audiourl)	{
 			attachment:{
 				type:"audio",
 				payload:{
-					url:SERVER_URL+auiodurl
+					url:SERVER_URL+audiodurl
 				}
 			}
 		}
