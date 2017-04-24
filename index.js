@@ -195,6 +195,38 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "comedy choosed");
 		break;
 		
+	  case 'Bacteria_PAYLOAD':
+		sendTestImageMessage(senderID, "foodborne/fb_bacteria.png");
+		break;
+		
+	  case 'Viruses_PAYLOAD':
+		sendTestImageMessage(senderID, "foodborne/fb_viruses.png");
+		break;
+		
+	  case 'Protozoa_PAYLOAD':
+		sendTestImageMessage(senderID, "foodborne/fb_protozoa.png");
+		break;
+		
+	  case 'Trematodes_PAYLOAD':
+		sendTestImageMessage(senderID, "foodborne/fb_trematodes.png");
+		break;
+		
+	  case 'Cestodes_PAYLOAD':
+		sendTestImageMessage(senderID, "foodborne/fb_cestodes.png");
+		break;
+	  
+	  case 'Nematodes_PAYLOAD':
+		sendTestImageMessage(senderID, "foodborne/fb_nematodes.png");
+		break;
+		
+	  case 'Natural_Toxins_PAYLOAD':
+		sendTestImageMessage(senderID, "foodborne/fb_natural_toxins.png");
+		break;
+		
+	  case 'Chemicals_PAYLOAD':
+		sendTestImageMessage(senderID, "foodborne/fb_chemicals.png");
+		break;
+		
 	  case 'Red_Blood_Tubes':
 		sendTextMessage(senderID, "The red bottle is less common – it is used for biochemistry tests requiring serum which might be adversely affected by the separator gel used in the yellow bottle.");
 		sendTextMessage(senderID, "Additive: None or contains silica particles which act as clot activators. \nWhat additive does: Clot activator promotes blood clotting with glass or silica particles. \nLaboratory Uses: Serum testing (glucose, cholesterol, triglycerides, HDL, potassium, amylase, alkaline phosphatase, BUN, CK, liver enzymes), blood bank, serology (RH Typing, Antibody screening, Red Cell Phototyping, DAT, RPR, monospot, rheumatoid factor, ANA)");
@@ -305,19 +337,23 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nTake preferably between meals\. \nAlso comes in 250 mg/5 ml powder for oral suspension\. \nStorage\: below 25°C \nFor the oral suspension \(powder or reconstituted suspension\)\: \nfollow manufacturer\’s instructions");
 		break;
 
-	case 'ygh-opd':
-	case 'ygh opd':
+	  case 'ygh-opd':
+	  case 'ygh opd':
 		sendTestImageMessage(senderID, "/yghopd/ygh-opd.jpg");
 		break;		
 
-	case 'rabies vaccine':
+	  case 'rabies vaccine':
 		sendTestImageMessage(senderID, "/vaccine/rabies-vaccine-myanmar.jpg");
 		break;
 
-	case 'honey':
+	  case 'honey':
 		sendTestAudioMessage(senderID, "/recording/Apr-24-1-25-PM-Honey-MWD.mp3");
 		break;
 
+	  case 'foodborne diseases':
+		sendFoodborneQuickReply(senderID);
+		break;
+		
 	  case 'cefixime':
 		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nThird-generation cephalosporin antibacterial");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nTyphoid fever in children \nAcute cystitis in girls over 2 years\, pregnant women and lactating women \nAcute pyelonephritis in adults \nCervicitis and urethritis due to Neisseria gonorrhoeae \(in combination with a treatment for chlamydia\)");
@@ -1224,6 +1260,62 @@ function sendQuickReply(recipientId) {
           "content_type":"text",
           "title":"Drama",
           "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+//foodborne diseases quickReply
+function sendFoodborneQuickReply(recipientID) {
+	var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "Choose from following categories..",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Bacteria",
+          "payload":"Bacteria_PAYLOAD"
+        },
+        {
+          "content_type":"text",
+          "title":"Viruses",
+          "payload":"Viruses_PAYLOAD"
+        },
+        {
+          "content_type":"text",
+          "title":"Protozoa",
+          "payload":"Protozoa_PAYLOAD"
+        },
+		{
+          "content_type":"text",
+          "title":"Trematodes",
+          "payload":"Trematodes_PAYLOAD"
+        },
+		{
+          "content_type":"text",
+          "title":"Cestodes",
+          "payload":"Cestodes_PAYLOAD"
+        },
+		{
+          "content_type":"text",
+          "title":"Nematodes",
+          "payload":"Nematodes_PAYLOAD"
+        },
+		{
+          "content_type":"text",
+          "title":"Natural toxins",
+          "payload":"Natural_Toxins_PAYLOAD"
+        },
+		{
+          "content_type":"text",
+          "title":"Chemicals",
+          "payload":"Chemicals_PAYLOAD"
         }
       ]
     }
