@@ -196,35 +196,35 @@ function receivedMessage(event) {
 		break;
 		
 	  case 'Bacteria_PAYLOAD':
-		sendTestImageMessage(senderID, "foodborne/fb_bacteria.png");
+		sendTestImageMessage(senderID, "/foodborne/fb_bacteria.png");
 		break;
 		
 	  case 'Viruses_PAYLOAD':
-		sendTestImageMessage(senderID, "foodborne/fb_viruses.png");
+		sendTestImageMessage(senderID, "/foodborne/fb_viruses.png");
 		break;
 		
 	  case 'Protozoa_PAYLOAD':
-		sendTestImageMessage(senderID, "foodborne/fb_protozoa.png");
+		sendTestImageMessage(senderID, "/foodborne/fb_protozoa.png");
 		break;
 		
 	  case 'Trematodes_PAYLOAD':
-		sendTestImageMessage(senderID, "foodborne/fb_trematodes.png");
+		sendTestImageMessage(senderID, "/foodborne/fb_trematodes.png");
 		break;
 		
 	  case 'Cestodes_PAYLOAD':
-		sendTestImageMessage(senderID, "foodborne/fb_cestodes.png");
+		sendTestImageMessage(senderID, "/foodborne/fb_cestodes.png");
 		break;
 	  
 	  case 'Nematodes_PAYLOAD':
-		sendTestImageMessage(senderID, "foodborne/fb_nematodes.png");
+		sendTestImageMessage(senderID, "/foodborne/fb_nematodes.png");
 		break;
 		
 	  case 'Natural_Toxins_PAYLOAD':
-		sendTestImageMessage(senderID, "foodborne/fb_natural_toxins.png");
+		sendTestImageMessage(senderID, "/foodborne/fb_natural_toxins.png");
 		break;
 		
 	  case 'Chemicals_PAYLOAD':
-		sendTestImageMessage(senderID, "foodborne/fb_chemicals.png");
+		sendTestImageMessage(senderID, "/foodborne/fb_chemicals.png");
 		break;
 		
 	  case 'Red_Blood_Tubes':
