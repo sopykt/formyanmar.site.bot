@@ -309,6 +309,15 @@ function receivedMessage(event) {
 	case 'ygh opd':
 		sendTestImageMessage(senderID, "/yghopd/ygh-opd.jpg");
 		break;		
+
+	case 'rabies vaccine':
+		sendTestImageMessage(senderID, "/vaccine/rabies-vaccine-myanmar.jpg");
+		break;
+
+	case 'honey':
+		sendTestImageMessage(senderID, "/recording/Apr-24-1-25-PM-Honey-MWD.mp3");
+		break;
+
 	  case 'cefixime':
 		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nThird-generation cephalosporin antibacterial");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nTyphoid fever in children \nAcute cystitis in girls over 2 years\, pregnant women and lactating women \nAcute pyelonephritis in adults \nCervicitis and urethritis due to Neisseria gonorrhoeae \(in combination with a treatment for chlamydia\)");
