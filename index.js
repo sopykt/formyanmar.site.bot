@@ -1269,7 +1269,7 @@ function sendQuickReply(recipientId) {
 }
 
 //foodborne diseases quickReply
-function sendFoodborneQuickReply(recipientID) {
+function sendFoodborneQuickReply(recipientId) {
 	var messageData = {
     recipient: {
       id: recipientId
