@@ -232,7 +232,7 @@ function receivedMessage(event) {
 		break;
 		
 	  case 'Categories_More_PAYLOAD':
-		sendTextMessage(senderID, "For details\, just type an organism name\. For Example\, \"Aeromonas enteritis\" \(without \"\"\)");
+		sendTextMessage(senderID, "For details\, just type an organism or a disease name\. For Example\, \"Aeromonas enteritis\" or \"Aeromonas hydrophila\" \(without \"\"\)");
 		break;
 		
 	  case 'Red_Blood_Tubes':
