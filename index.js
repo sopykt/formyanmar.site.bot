@@ -196,35 +196,43 @@ function receivedMessage(event) {
 		break;
 		
 	  case 'Bacteria_PAYLOAD':
-		sendTestImageMessage(senderID, "/foodborne/fb_bacteria.PNG");
+		sendCategoriesQuickReply(senderID, "/foodborne/fb_bacteria.PNG");
 		break;
 		
 	  case 'Viruses_PAYLOAD':
-		sendTestImageMessage(senderID, "/foodborne/fb_viruses.PNG");
+		sendCategoriesQuickReply(senderID, "/foodborne/fb_viruses.PNG");
 		break;
 		
 	  case 'Protozoa_PAYLOAD':
-		sendTestImageMessage(senderID, "/foodborne/fb_protozoa.PNG");
+		sendCategoriesQuickReply(senderID, "/foodborne/fb_protozoa.PNG");
 		break;
 		
 	  case 'Trematodes_PAYLOAD':
-		sendTestImageMessage(senderID, "/foodborne/fb_trematodes.PNG");
+		sendCategoriesQuickReply(senderID, "/foodborne/fb_trematodes.PNG");
 		break;
 		
 	  case 'Cestodes_PAYLOAD':
-		sendTestImageMessage(senderID, "/foodborne/fb_cestodes.PNG");
+		sendCategoriesQuickReply(senderID, "/foodborne/fb_cestodes.PNG");
 		break;
 	  
 	  case 'Nematodes_PAYLOAD':
-		sendTestImageMessage(senderID, "/foodborne/fb_nematodes.PNG");
+		sendCategoriesQuickReply(senderID, "/foodborne/fb_nematodes.PNG");
 		break;
 		
 	  case 'Natural_Toxins_PAYLOAD':
-		sendTestImageMessage(senderID, "/foodborne/fb_natural_toxins.PNG");
+		sendCategoriesQuickReply(senderID, "/foodborne/fb_natural_toxins.PNG");
 		break;
 		
 	  case 'Chemicals_PAYLOAD':
-		sendTestImageMessage(senderID, "/foodborne/fb_chemicals.PNG");
+		sendCategoriesQuickReply(senderID, "/foodborne/fb_chemicals.PNG");
+		break;
+		
+	  case 'Categories_Back_PAYLOAD':
+		sendFoodborneQuickReply(senderID);
+		break;
+		
+	  case 'Categories_More_PAYLOAD':
+		sendTextMessage(senderID, "For details\, just type an organism name\. For Example\, \"Aeromonas enteritis\" \(without \"\"\)");
 		break;
 		
 	  case 'Red_Blood_Tubes':
@@ -1316,6 +1324,37 @@ function sendFoodborneQuickReply(recipientId) {
           "content_type":"text",
           "title":"Chemicals",
           "payload":"Chemicals_PAYLOAD"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+//quick reply for each categories
+function sendCategoriesQuickReply(recipientId, imageurl) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment:{
+				type:"image",
+				payload:{
+					url:SERVER_URL+imageurl
+				}
+			},
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Back",
+          "payload":"Categories_Back_PAYLOAD"
+        },
+        {
+          "content_type":"text",
+          "title":"More",
+          "payload":"Categories_More_PAYLOAD"
         }
       ]
     }
