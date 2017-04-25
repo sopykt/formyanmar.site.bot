@@ -362,6 +362,131 @@ function receivedMessage(event) {
 		sendFoodborneQuickReply(senderID);
 		break;
 		
+	  case 'aeromonas enteritis':
+		sendTestImageMessage(senderID, "/foodborne/fb_aeromonas_enteritis.PNG");
+		break;
+		
+	  case 'amoebiasis':
+		sendTestImageMessage(senderID, "/foodborne/fb_amoebiasis.PNG");
+		break;
+		
+	  case 'anisakiasis':
+		sendTestImageMessage(senderID, "/foodborne/fb_anisakiasis.PNG");
+		break;
+		
+	  case 'ascariasis':
+		sendTestImageMessage(senderID, "/foodborne/fb_ascariasis.PNG");
+		break;
+		
+	  case 'bacillus cereus':
+		sendTestImageMessage(senderID, "/foodborne/fb_bacillus_cereus.PNG");
+		break;
+		
+	  case 'botulism':
+		sendTestImageMessage(senderID, "/foodborne/fb_botulism.PNG");
+		break;
+		
+	  case 'brucellosis':
+		sendTestImageMessage(senderID, "/foodborne/fb_brucellosis.PNG");
+		break;
+		
+	  case 'campylobacteriosis':
+		sendTestImageMessage(senderID, "/foodborne/fb_campylobacteriosis.PNG");
+		break;
+		
+	  case 'cholera':
+		sendTestImageMessage(senderID, "/foodborne/fb_cholera.PNG");
+		break;
+		
+	  case 'clonorchiasis':
+		sendTestImageMessage(senderID, "/foodborne/fb_clonorchiasis.PNG");
+		break;
+		
+	  case 'clostridium perfringens':
+		sendTestImageMessage(senderID, "/foodborne/fb_clostridium_perfringens.PNG");
+		break;
+		
+	  case 'cryptosporidiosis':
+		sendTestImageMessage(senderID, "/foodborne/fb_cryptosporidiosis.PNG");
+		break;
+		
+	  case 'escherichia coli':
+		sendTestImageMessage(senderID, "/foodborne/fb_escherichia_coli-1.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_escherichia_coli-2.PNG");
+		break;
+		
+	  case 'fascioliasis':
+		sendTestImageMessage(senderID, "/foodborne/fb_fascioliasis.PNG");
+		break;
+		
+	  case 'giardiasis':
+		sendTestImageMessage(senderID, "/foodborne/fb_giardiasis.PNG");
+		break;
+		
+	  case 'hepatitis a':
+		sendTestImageMessage(senderID, "/foodborne/fb_hepatitis_a.PNG");
+		break;
+		
+	  case 'listeriosis':
+		sendTestImageMessage(senderID, "/foodborne/fb_listeriosis.PNG");
+		break;
+		
+	  case 'opisthorchiasis':
+		sendTestImageMessage(senderID, "/foodborne/fb_opisthorchiasis.PNG");
+		break;
+		
+	  case 'paragonimiasis':
+		sendTestImageMessage(senderID, "/foodborne/fb_paragonimiasis.PNG");
+		break;
+		
+	  case 'poliomyelitis':
+		sendTestImageMessage(senderID, "/foodborne/fb_poliomyelitis.PNG");
+		break;
+		
+	  case 'salmonellosis':
+		sendTestImageMessage(senderID, "/foodborne/fb_salmonellosis.PNG");
+		break;
+		
+	  case 'shigellosis':
+		sendTestImageMessage(senderID, "/foodborne/fb_shigellosis.PNG");
+		break;
+		
+	  case 'staphylococcus aureus':
+		sendTestImageMessage(senderID, "/foodborne/fb_staphylococcus_aureus.PNG");
+		break;
+		
+	  case 'taeniasis':
+		sendTestImageMessage(senderID, "/foodborne/fb_taeniasis.PNG");
+		break;
+		
+	  case 'toxoplasmosis':
+		sendTestImageMessage(senderID, "/foodborne/fb_toxoplasmosis.PNG");
+		break;
+		
+	  case 'trichinellosis':
+		sendTestImageMessage(senderID, "/foodborne/fb_trichinellosis.PNG");
+		break;
+		
+	  case 'typhoid':
+		sendTestImageMessage(senderID, "/foodborne/fb_typhoid.PNG");
+		break;
+		
+	  case 'vibrio parahaemolyticus':
+		sendTestImageMessage(senderID, "/foodborne/fb_vibrio_parahaemolyticus.PNG");
+		break;
+		
+	  case 'vibrio vulnificus':
+		sendTestImageMessage(senderID, "/foodborne/fb_vibrio_vulnificus.PNG");
+		break;
+		
+	  case 'viral gastroenteritis':
+		sendTestImageMessage(senderID, "/foodborne/fb_viral_gastroenteritis.PNG");
+		break;
+		
+	  case 'yersiniosis':
+		sendTestImageMessage(senderID, "/foodborne/fb_yersiniosis.PNG");
+		break;
+		
 	  case 'cefixime':
 		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nThird-generation cephalosporin antibacterial");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nTyphoid fever in children \nAcute cystitis in girls over 2 years\, pregnant women and lactating women \nAcute pyelonephritis in adults \nCervicitis and urethritis due to Neisseria gonorrhoeae \(in combination with a treatment for chlamydia\)");
