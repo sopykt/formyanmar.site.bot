@@ -371,120 +371,120 @@ function receivedMessage(event) {
 		break;
 		
 	  case 'anisakiasis':
-		sendTestImageMessage(senderID, "/foodborne/fb_anisakiasis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_anisakiasis.png");
 		break;
 		
 	  case 'ascariasis':
-		sendTestImageMessage(senderID, "/foodborne/fb_ascariasis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_ascariasis.png");
 		break;
 		
 	  case 'bacillus cereus':
-		sendTestImageMessage(senderID, "/foodborne/fb_bacillus_cereus.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_bacillus_cereus.png");
 		break;
 		
 	  case 'botulism':
-		sendTestImageMessage(senderID, "/foodborne/fb_botulism.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_botulism.png");
 		break;
 		
 	  case 'brucellosis':
-		sendTestImageMessage(senderID, "/foodborne/fb_brucellosis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_brucellosis.png");
 		break;
 		
 	  case 'campylobacteriosis':
-		sendTestImageMessage(senderID, "/foodborne/fb_campylobacteriosis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_campylobacteriosis.png");
 		break;
 		
 	  case 'cholera':
-		sendTestImageMessage(senderID, "/foodborne/fb_cholera.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_cholera.png");
 		break;
 		
 	  case 'clonorchiasis':
-		sendTestImageMessage(senderID, "/foodborne/fb_clonorchiasis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_clonorchiasis.png");
 		break;
 		
 	  case 'clostridium perfringens':
-		sendTestImageMessage(senderID, "/foodborne/fb_clostridium_perfringens.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_clostridium_perfringens.png");
 		break;
 		
 	  case 'cryptosporidiosis':
-		sendTestImageMessage(senderID, "/foodborne/fb_cryptosporidiosis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_cryptosporidiosis.png");
 		break;
 		
 	  case 'escherichia coli':
-		sendTestImageMessage(senderID, "/foodborne/fb_escherichia_coli-1.PNG");
-		sendTestImageMessage(senderID, "/foodborne/fb_escherichia_coli-2.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_escherichia_coli-1.png");
+		sendTestImageMessage(senderID, "/foodborne/fb_escherichia_coli-2.png");
 		break;
 		
 	  case 'fascioliasis':
-		sendTestImageMessage(senderID, "/foodborne/fb_fascioliasis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_fascioliasis.png");
 		break;
 		
 	  case 'giardiasis':
-		sendTestImageMessage(senderID, "/foodborne/fb_giardiasis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_giardiasis.png");
 		break;
 		
 	  case 'hepatitis a':
-		sendTestImageMessage(senderID, "/foodborne/fb_hepatitis_a.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_hepatitis_a.png");
 		break;
 		
 	  case 'listeriosis':
-		sendTestImageMessage(senderID, "/foodborne/fb_listeriosis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_listeriosis.png");
 		break;
 		
 	  case 'opisthorchiasis':
-		sendTestImageMessage(senderID, "/foodborne/fb_opisthorchiasis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_opisthorchiasis.png");
 		break;
 		
 	  case 'paragonimiasis':
-		sendTestImageMessage(senderID, "/foodborne/fb_paragonimiasis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_paragonimiasis.png");
 		break;
 		
 	  case 'poliomyelitis':
-		sendTestImageMessage(senderID, "/foodborne/fb_poliomyelitis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_poliomyelitis.png");
 		break;
 		
 	  case 'salmonellosis':
-		sendTestImageMessage(senderID, "/foodborne/fb_salmonellosis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_salmonellosis.png");
 		break;
 		
 	  case 'shigellosis':
-		sendTestImageMessage(senderID, "/foodborne/fb_shigellosis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_shigellosis.png");
 		break;
 		
 	  case 'staphylococcus aureus':
-		sendTestImageMessage(senderID, "/foodborne/fb_staphylococcus_aureus.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_staphylococcus_aureus.png");
 		break;
 		
 	  case 'taeniasis':
-		sendTestImageMessage(senderID, "/foodborne/fb_taeniasis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_taeniasis.png");
 		break;
 		
 	  case 'toxoplasmosis':
-		sendTestImageMessage(senderID, "/foodborne/fb_toxoplasmosis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_toxoplasmosis.png");
 		break;
 		
 	  case 'trichinellosis':
-		sendTestImageMessage(senderID, "/foodborne/fb_trichinellosis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_trichinellosis.png");
 		break;
 		
 	  case 'typhoid':
-		sendTestImageMessage(senderID, "/foodborne/fb_typhoid.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_typhoid.png");
 		break;
 		
 	  case 'vibrio parahaemolyticus':
-		sendTestImageMessage(senderID, "/foodborne/fb_vibrio_parahaemolyticus.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_vibrio_parahaemolyticus.png");
 		break;
 		
 	  case 'vibrio vulnificus':
-		sendTestImageMessage(senderID, "/foodborne/fb_vibrio_vulnificus.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_vibrio_vulnificus.png");
 		break;
 		
 	  case 'viral gastroenteritis':
-		sendTestImageMessage(senderID, "/foodborne/fb_viral_gastroenteritis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_viral_gastroenteritis.png");
 		break;
 		
 	  case 'yersiniosis':
-		sendTestImageMessage(senderID, "/foodborne/fb_yersiniosis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_yersiniosis.png");
 		break;
 		
 	  case 'cefixime':
