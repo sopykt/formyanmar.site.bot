@@ -367,7 +367,7 @@ function receivedMessage(event) {
 		break;
 		
 	  case 'amoebiasis':
-		sendTestImageMessage(senderID, "/foodborne/fb_amoebiasis.PNG");
+		sendTestImageMessage(senderID, "/foodborne/fb_amoebiasis.png");
 		break;
 		
 	  case 'anisakiasis':
