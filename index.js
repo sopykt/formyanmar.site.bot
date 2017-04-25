@@ -363,18 +363,25 @@ function receivedMessage(event) {
 		break;
 		
 	  case 'aeromonas enteritis':
+	  case 'aeromonas':
+	  case 'aeromonas hydrophila':
 		sendTestImageMessage(senderID, "/foodborne/fb_aeromonas_enteritis.PNG");
 		break;
 		
 	  case 'amoebiasis':
+	  case 'amoebic dysentery':
+	  case 'entamoeba histolytica':
 		sendTestImageMessage(senderID, "/foodborne/fb_amoebiasis.png");
 		break;
 		
 	  case 'anisakiasis':
+	  case 'anisakis':
+	  case 'anisakis spp':
 		sendTestImageMessage(senderID, "/foodborne/fb_anisakiasis.png");
 		break;
 		
 	  case 'ascariasis':
+	  case 'ascaris lumbricoides':
 		sendTestImageMessage(senderID, "/foodborne/fb_ascariasis.png");
 		break;
 		
