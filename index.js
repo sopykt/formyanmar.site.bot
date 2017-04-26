@@ -366,6 +366,10 @@ function receivedMessage(event) {
 		sendTestAudioMessage(senderID, "/recording/Apr-25-1-21-PM-Urinate-MWD.mp3");
 		break;
 
+	  case 'vomitting':
+		sendTestAudioMessage(senderID, "/recording/Apr-26-4-01-PM-vomitting-MWD.mp3");
+		break;
+
 	  case 'foodborne diseases':
 		sendFoodborneQuickReply(senderID);
 		break;
