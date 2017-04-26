@@ -16,7 +16,12 @@ const token = (process.env.MESSENGER_PAGE_ACCESS_TOKEN)
 //const connect = require('connect')
 const serveStatic = require('serve-static')
 
-
+//testing calling custom modules
+const mymodule = require('mymodule')
+// -> my_module initialized.
+mymodule.printA(); 
+// -> my_module worked.
+mymodule.printB(); 
 
 app.set('port', (process.env.PORT || 3000))
 
