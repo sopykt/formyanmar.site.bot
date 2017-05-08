@@ -378,6 +378,8 @@ function receivedMessage(event) {
 	  case 'ngapeeyay':
 	  case 'ငပိရည်':
 	  case 'ငပိရည္':
+	  case 'ငါးပိရည်':
+	  case 'ငါးပိရည္':
 		sendTestAudioMessage(senderID, "/recording/May-8-11-06-AM-nga-pee-yay-MWD.mp3");
                 break;
 
