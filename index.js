@@ -375,6 +375,12 @@ function receivedMessage(event) {
 		sendTestAudioMessage(senderID, "/recording/Apr-26-4-01-PM-vomitting-MWD.mp3");
 		break;
 
+	  case 'ngapeeyay':
+	  case 'ငပိရည်':
+	  case 'ငပိရည္':
+		sendTestAudioMessage(senderID, "/recording/May-8-11-06-AM-nga-pee-yay-MWD.mp3");
+                break;
+
 	  case 'foodborne diseases':
 		sendFoodborneQuickReply(senderID);
 		break;
