@@ -388,6 +388,65 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "For details map view of each states\, please type given names\- \nayeyarwadi\,\nbago\,\nchin\,\nkachin\,\nkayar\,\nkayin\,\nmagwe\,\nmandalay\,\nmon\,\nnaypyitaw\,\nrakhine\,\nsagaing\,\nshan\,\ntanintharyi\,\nyangon\. \n\(either capital or small\)");
 		break;
 
+	  case 'ayeyarwadi':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/ayeyarwadi.jpg");
+		break;
+		
+	  case 'bago':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/bago.jpg");
+		break;
+
+	  case 'chin':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/chin.jpg");
+		break;
+		
+	  case 'kachin':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/kachin.jpg");
+		break;	
+		
+	  case 'kayar':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/kayar.jpg");
+		break;
+		
+	  case 'kayin':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/kayin.jpg");
+		break;
+		
+	  case 'magwe':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/magwe.jpg");
+		break;
+		
+	  case 'mandalay':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/mandalay.jpg");
+		break;
+		
+	  case 'mon':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/mon.jpg");
+		break;
+		
+	  case 'naypyitaw':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/naypyitaw.jpg");
+		break;	
+		
+	  case 'rakhine':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/rakhine.jpg");
+		break;
+		
+	  case 'sagaing':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/sagaing.jpg");
+		break;	
+		
+	  case 'shan':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/shan.jpg");
+		break;
+		
+	  case 'tanintharyi':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/tanintharyi.jpg");
+		break;	
+		
+	  case 'yangon':
+		sendTestImageMessage(senderID, "/myanmar-health-centers/yangon.jpg");
+		break;
 	  case 'foodborne diseases':
 		sendFoodborneQuickReply(senderID);
 		break;
