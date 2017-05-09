@@ -1302,43 +1302,78 @@ function sendMyanmarHealthCentersQuickReply(recipientId, imageurl) {
       quick_replies: [
         {
           "content_type":"text",
-          "title":"Red",
-          "payload":"Red_Blood_Tubes"
+          "title":"AyeYarWadi",
+          "payload":"AyeYarWadiPayload"
         },
         {
           "content_type":"text",
-          "title":"Yellow",
-          "payload":"Yellow_Blood_Tubes"
+          "title":"Bago",
+          "payload":"BagoPayload"
         },
         {
           "content_type":"text",
-          "title":"Light Blue",
-          "payload":"Light_Blue_Blood_Tubes"
+          "title":"Chin",
+          "payload":"ChinPayload"
         },
         {
           "content_type":"text",
-          "title":"Green",
-          "payload":"Green_Blood_Tubes"
+          "title":"Kachin",
+          "payload":"KachinPayload"
         },
         {
           "content_type":"text",
-          "title":"Lavender",
-          "payload":"Lavender_Blood_Tubes"
+          "title":"Kayar",
+          "payload":"KayarPayload"
         },
         {
           "content_type":"text",
-          "title":"Grey",
-          "payload":"Grey_Blood_Tubes"
+          "title":"Kayin",
+          "payload":"KayinPayload"
         },
         {
           "content_type":"text",
-          "title":"Royal Blue",
-          "payload":"Royal_Blue_Blood_Tubes"
+          "title":"Magwe",
+          "payload":"MagwePayload"
         },
         {
           "content_type":"text",
-          "title":"Black",
-          "payload":"Black_Blood_Tubes"
+          "title":"Mandalay",
+          "payload":"MandalayPayload"
+        },
+        {
+          "content_type":"text",
+          "title":"Mon",
+          "payload":"MonPayload"
+        },
+        {
+          "content_type":"text",
+          "title":"NayPyiTaw",
+          "payload":"NayPyiTawPayload"
+        },
+        {
+          "content_type":"text",
+          "title":"Rakhine",
+          "payload":"RakhinePayload"
+        },
+        {
+          "content_type":"text",
+          "title":"Sagaing",
+          "payload":"SagaingPayload"
+        },
+        {
+          "content_type":"text",
+          "title":"Shan",
+          "payload":"ShanPayload"
+        },
+        {
+          "content_type":"text",
+          "title":"TaNinTharYi",
+          "payload":"TaNinTharYiPayload"
+        },
+        {
+          "content_type":"text",
+          "title":"Yangon",
+          "payload":"YangonPayload"
         }
       ]
     }
