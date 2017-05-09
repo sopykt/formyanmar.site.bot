@@ -384,7 +384,8 @@ function receivedMessage(event) {
         break;
 		
 	  case 'myanmar health centers':
-		sendMyanmarHealthCentersQuickReply(senderID, "/myanmar-health-centers/mm-health-centers.jpg");
+		sendTestImageMessage(senderID, "/myanmar-health-centers/mm-health-centers.jpg");
+		sendTextMessage(senderID, "For details map view of each states\, please type given names\- \nayeyarwadi\,\nbago\,\nchin\,\nkachin\,\nkayar\,\nkayin\,\nmagwe\,\nmandalay\,\nmon\,\nnaypyitaw\,\nrakhine\,\nsagaing\,\nshan\,\ntanintharyi\,\nyangon\. \n\(either capital or small\)");
 		break;
 
 	  case 'foodborne diseases':
@@ -1286,7 +1287,7 @@ function sendBloodTubeGenericMessage(recipientId) {
 }
 
 //sendMyanmarHealthCentersQuickReply
-
+/*
 function sendMyanmarHealthCentersQuickReply(recipientId, imageurl) {
   var messageData = {
     recipient: {
@@ -1381,6 +1382,7 @@ function sendMyanmarHealthCentersQuickReply(recipientId, imageurl) {
 
   callSendAPI(messageData);
 }
+*/
 
 /*
  * test generic message for webview
