@@ -381,7 +381,11 @@ function receivedMessage(event) {
 	  case 'ငါးပိရည်':
 	  case 'ငါးပိရည္':
 		sendTestAudioMessage(senderID, "/recording/May-8-11-06-AM-nga-pee-yay-MWD.mp3");
-                break;
+        break;
+		
+	  case 'myanmar health centers':
+		sendMyanmarHealthCentersQuickReply(senderID, "/myanmar-health-centers/mm-health-centers.jpg");
+		break;
 
 	  case 'foodborne diseases':
 		sendFoodborneQuickReply(senderID);
@@ -1233,6 +1237,68 @@ function sendBloodTubeGenericMessage(recipientId) {
           }]
         }
       },
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Red",
+          "payload":"Red_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Yellow",
+          "payload":"Yellow_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Light Blue",
+          "payload":"Light_Blue_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Green",
+          "payload":"Green_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Lavender",
+          "payload":"Lavender_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Grey",
+          "payload":"Grey_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Royal Blue",
+          "payload":"Royal_Blue_Blood_Tubes"
+        },
+        {
+          "content_type":"text",
+          "title":"Black",
+          "payload":"Black_Blood_Tubes"
+        }
+      ]
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+//sendMyanmarHealthCentersQuickReply
+
+function sendMyanmarHealthCentersQuickReply(recipientId, imageurl) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment:{
+				type:"image",
+				payload:{
+					url:SERVER_URL+imageurl
+				}
+			},
       quick_replies: [
         {
           "content_type":"text",
