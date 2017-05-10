@@ -709,6 +709,10 @@ function receivedMessage(event) {
 		sendVideoMessage(senderID, "/vid/tracheostomy.mp4");
 		break;
 
+	  case 'com1':
+		sendVideoMessage(senderID, "/vid/basic-com.mkv");
+		break;
+
 	  case 'file':
         sendFileMessage(senderID);
         break;
