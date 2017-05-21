@@ -15,6 +15,13 @@ const SERVER_URL = (process.env.SERVER_URL)
 const token = (process.env.MESSENGER_PAGE_ACCESS_TOKEN)
 //const connect = require('connect')
 const serveStatic = require('serve-static')
+// load shelljs and chance
+const shell = require('shelljs');
+const Chance = require('chance');
+var chance = new Chance();
+
+// Load ReadLastLines
+const readLastLines = require('read-last-lines');
 
 //testing calling custom modules
 const mymodule = require('mymodule')
@@ -23,7 +30,7 @@ mymodule.printA();
 // -> my_module worked.
 mymodule.printB(); 
 
-app.set('port', (process.env.PORT || 3000))
+app.set('port', (process.env.PORT || 2000))
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}))
@@ -183,6 +190,7 @@ function receivedMessage(event) {
   // You may get a text or attachment but not both
   var messageText = message.text;
   var messageAttachments = message.attachments;
+  //var messageAttachmenturl = message.attachments[0].payload.url;
   var quickReply = message.quick_reply;
   var buttons = message.buttons;
 
@@ -782,6 +790,21 @@ function receivedMessage(event) {
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
+	var messageAttachmenturl = "\"" + message.attachments[0].payload.url + "\"";
+	var my_random_string = chance.first();
+	shell.exec('wget --accept .jpg,.jpeg --cookies=on -p ' + messageAttachmenturl + ' -O ../mynodeapp/public/' + my_random_string + '.jpg', function(code, stdout, stderr) {
+  		console.log('Exit code:', code);
+  		console.log('Program output:', stdout);
+		readLastLines.read('/home/soepaing/.pm2/logs/devbot-error-5.log', 5)
+    			.then((lines) => sendTextMessage(senderID, lines));
+		//var wgetjson = JSON.parse(stderr);
+  		//console.log('Program stderr:', wgetjson);
+		//sendTextMessage(senderID, stdout);
+		//sendTextMessage(senderID, stderr);
+	});
+
+	//console.log(messageAttachmenturl);
+	
   }
 }
 
