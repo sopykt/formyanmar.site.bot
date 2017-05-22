@@ -190,7 +190,6 @@ function receivedMessage(event) {
   // You may get a text or attachment but not both
   var messageText = message.text;
   var messageAttachments = message.attachments;
-  //var messageAttachmenturl = message.attachments[0].payload.url;
   var quickReply = message.quick_reply;
   var buttons = message.buttons;
 
