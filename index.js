@@ -341,6 +341,9 @@ function receivedMessage(event) {
     // the text we received.
     switch (messageText.toLowerCase()) {
       
+	  case 'test':
+		console.log(5);
+	  
       case 'help':
 		sendGetStartedQuickReply(senderID);
 		break;
