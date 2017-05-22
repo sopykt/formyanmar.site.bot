@@ -343,6 +343,7 @@ function receivedMessage(event) {
       
 	  case 'test':
 		console.log(5);
+		break;
 	  
       case 'help':
 		sendGetStartedQuickReply(senderID);
