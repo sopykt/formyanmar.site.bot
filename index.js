@@ -342,6 +342,7 @@ function receivedMessage(event) {
     switch (messageText.toLowerCase()) {
       
 	  case 'test':
+		sendTextMessage(senderID, "color\?");
 		console.log(5);
 		break;
 	  
