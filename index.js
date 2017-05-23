@@ -1,7 +1,7 @@
 //This is still work in progress
 /*
 Please report any bugs to nicomwaks@gmail.com
-i have added console.log on line 48 
+i have added console.log on line 48
  */
 'use strict'
 
@@ -26,9 +26,9 @@ const readLastLines = require('read-last-lines');
 //testing calling custom modules
 const mymodule = require('mymodule')
 // -> my_module initialized.
-mymodule.printA(); 
+mymodule.printA();
 // -> my_module worked.
-mymodule.printB(); 
+mymodule.printB();
 
 app.set('port', (process.env.PORT || 2000))
 
@@ -98,7 +98,7 @@ app.post('/webhook', function (req, res) {
 
     // Assume all went well.
     //
-    // You must send back a 200, within 20 seconds, to let us know you've 
+    // You must send back a 200, within 20 seconds, to let us know you've
     // successfully received the callback. Otherwise, the request will time out.
     res.sendStatus(200);
   }
@@ -106,14 +106,14 @@ app.post('/webhook', function (req, res) {
 
 /*
  * This path is used for account linking. The account linking call-to-action
- * (sendAccountLinking) is pointed to this URL. 
- * 
+ * (sendAccountLinking) is pointed to this URL.
+ *
  */
 app.get('/authorize', function(req, res) {
   var accountLinkingToken = req.query.account_linking_token;
   var redirectURI = req.query.redirect_uri;
 
-  // Authorization Code should be generated per user by the developer. This will 
+  // Authorization Code should be generated per user by the developer. This will
   // be passed to the Account Linking callback.
   var authCode = "1234567890";
 
@@ -130,8 +130,8 @@ app.get('/authorize', function(req, res) {
 /*
  * Authorization Event
  *
- * The value for 'optin.ref' is defined in the entry point. For the "Send to 
- * Messenger" plugin, it is the 'data-ref' field. Read more at 
+ * The value for 'optin.ref' is defined in the entry point. For the "Send to
+ * Messenger" plugin, it is the 'data-ref' field. Read more at
  * https://developers.facebook.com/docs/messenger-platform/webhook-reference/authentication
  *
  */
@@ -141,14 +141,14 @@ function receivedAuthentication(event) {
   var timeOfAuth = event.timestamp;
 
   // The 'ref' field is set in the 'Send to Messenger' plugin, in the 'data-ref'
-  // The developer can set this to an arbitrary value to associate the 
+  // The developer can set this to an arbitrary value to associate the
   // authentication callback with the 'Send to Messenger' click event. This is
-  // a way to do account linking when the user clicks the 'Send to Messenger' 
+  // a way to do account linking when the user clicks the 'Send to Messenger'
   // plugin.
   var passThroughParam = event.optin.ref;
 
   console.log("Received authentication for user %d and page %d with pass " +
-    "through param '%s' at %d", senderID, recipientID, passThroughParam, 
+    "through param '%s' at %d", senderID, recipientID, passThroughParam,
     timeOfAuth);
 
   // When an authentication is received, we'll send a message back to the sender
@@ -159,28 +159,28 @@ function receivedAuthentication(event) {
 /*
  * Message Event
  *
- * This event is called when a message is sent to your page. The 'message' 
+ * This event is called when a message is sent to your page. The 'message'
  * object format can vary depending on the kind of message that was received.
  * Read more at https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-received
  *
- * For this example, we're going to echo any text that we get. If we get some 
+ * For this example, we're going to echo any text that we get. If we get some
  * special keywords ('button', 'generic', 'receipt'), then we'll send back
- * examples of those bubbles to illustrate the special message bubbles we've 
- * created. If we receive a message with an attachment (image, video, audio), 
+ * examples of those bubbles to illustrate the special message bubbles we've
+ * created. If we receive a message with an attachment (image, video, audio),
  * then we'll simply confirm that we've received the attachment.
- * 
+ *
  */
 function receivedMessage(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
   var message = event.message;
-  
-  
 
-  console.log("Received message for user %d and page %d at %d with message:", 
-    senderID, recipientID, timeOfMessage);
-  console.log(JSON.stringify(message));
+
+// comment out this 3 lines for logging received message
+//  console.log("Received message for user %d and page %d at %d with message:",
+//    senderID, recipientID, timeOfMessage);
+//  console.log(JSON.stringify(message));
 
   var isEcho = message.is_echo;
   var messageId = message.mid;
@@ -194,10 +194,10 @@ function receivedMessage(event) {
   var buttons = message.buttons;
 
   if (isEcho) {
-    // Just logging message echoes to console
-    console.log("Received echo for message %s and app %d with metadata %s", 
-      messageId, appId, metadata);
-    return;
+    // Just logging message echoes to console -- was commenting for testing purpose
+    //console.log("Received echo for message %s and app %d with metadata %s",
+    //  messageId, appId, metadata);
+    // return;
   } else if (quickReply) {
     var quickReplyPayload = quickReply.payload;
     console.log("Quick reply for message %s with payload %s",
@@ -206,52 +206,52 @@ function receivedMessage(event) {
 	  case 'DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY':
 		sendTextMessage(senderID, "comedy choosed");
 		break;
-		
+
 	  case 'Bacteria_PAYLOAD':
 		sendCategoriesQuickReply(senderID, "/foodborne/fb_bacteria.PNG");
 		break;
-		
+
 	  case 'Viruses_PAYLOAD':
 		sendCategoriesQuickReply(senderID, "/foodborne/fb_viruses.PNG");
 		break;
-		
+
 	  case 'Protozoa_PAYLOAD':
 		sendCategoriesQuickReply(senderID, "/foodborne/fb_protozoa.PNG");
 		break;
-		
+
 	  case 'Trematodes_PAYLOAD':
 		sendCategoriesQuickReply(senderID, "/foodborne/fb_trematodes.PNG");
 		break;
-		
+
 	  case 'Cestodes_PAYLOAD':
 		sendCategoriesQuickReply(senderID, "/foodborne/fb_cestodes.PNG");
 		break;
-	  
+
 	  case 'Nematodes_PAYLOAD':
 		sendCategoriesQuickReply(senderID, "/foodborne/fb_nematodes.PNG");
 		break;
-		
+
 	  case 'Natural_Toxins_PAYLOAD':
 		sendCategoriesQuickReply(senderID, "/foodborne/fb_natural_toxins.PNG");
 		break;
-		
+
 	  case 'Chemicals_PAYLOAD':
 		sendCategoriesQuickReply(senderID, "/foodborne/fb_chemicals.PNG");
 		break;
-		
+
 	  case 'Categories_Back_PAYLOAD':
 		sendFoodborneQuickReply(senderID);
 		break;
-		
+
 	  case 'Categories_More_PAYLOAD':
 		sendTextMessage(senderID, "For details\, just type an organism or a disease name\. For Example\, \"Aeromonas enteritis\" or \"Aeromonas hydrophila\" \(without \"\"\)");
 		break;
-		
+
 	  case 'Red_Blood_Tubes':
 		sendTextMessage(senderID, "The red bottle is less common – it is used for biochemistry tests requiring serum which might be adversely affected by the separator gel used in the yellow bottle.");
 		sendTextMessage(senderID, "Additive: None or contains silica particles which act as clot activators. \nWhat additive does: Clot activator promotes blood clotting with glass or silica particles. \nLaboratory Uses: Serum testing (glucose, cholesterol, triglycerides, HDL, potassium, amylase, alkaline phosphatase, BUN, CK, liver enzymes), blood bank, serology (RH Typing, Antibody screening, Red Cell Phototyping, DAT, RPR, monospot, rheumatoid factor, ANA)");
 		break;
-		
+
 	  case 'Yellow_Blood_Tubes':
 		sendTextMessage(senderID, "Additive: anticoagulant SPS (Sodium Polyanetholsulfonate) & ACD (acid citrate dextrose) \nWhat additive does: Prevents the blood from clotting and stabilizes bacterial growth. \nLaboratory Uses: Blood and bodily fluid cultures (HLA, DNA, Paternity) Tubes with SPS – For Blood and bodily fluid cultures (HLA, DNA, Paternity). The SPS aids in the recovery of microorganisms by slowing down\/ stopping the actions of complement, phagocytes, and certain antibiotics. Tubes with ACD are for cellular studies, HLA typing, paternity testing.");
 		break;
@@ -260,55 +260,55 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "The blue bottle is used for haematology tests involving the clotting system, which require inactivated whole blood for analysis.");
 		sendTextMessage(senderID, "Additive: Sodium Citrate \nWhat additive does: Binds and remove calcium to prevent blood from clotting \nLaboratory uses: Coagulation (clotting process-P.T) PT (Prothrombin Time – evaluates the extrinsic system of the coagulation cascade & monitors coumadin therapy) APTT/ PTT (Activated Partial Thromboplastin Time – evaluates the intrinsic system of the coagulation cascade & monitors heparin therapy) FDP (Fibrinogen Degradation Products) TT (Thrombin Time) Factor assays");
 		break;
-		
+
 	  case 'Green_Blood_Tubes':
 		sendTextMessage(senderID, "This less commonly used bottle is for biochemistry tests which require heparinised plasma or whole blood for analysis.");
 		sendTextMessage(senderID, "Additive: Heparin (Sodium/Lithium/Ammonium) \nWhat additive does: Inhibits thrombin formation to prevent clotting \nLaboratory uses: Chemistry Testing (Plasma determinations in chemistry) : ammonia, carboxyhemoglobin & STAT electrolytes, chromosome screening, insulin, renin and aldosterone");
 		break;
-		
+
 	  case 'Lavender_Blood_Tubes':
 		sendTextMessage(senderID, "These bottles are generally used for haematology tests where whole blood is required for analysis.");
 		sendTextMessage(senderID, "Additive: EDTA (Ethylenediaminetetraacetic Acid) \nWhat additive does: Removes calcium preventing clotting of blood \nLaboratory uses: Hematology testing (ESR, CBC w/diff., HgBA1c) blood film for abnormal cells or malaria parasites, reticulocytes, red cell folate, Monospot test for EBV, parathyroid hormone (PTH)");
 		break;
-		
+
 	  case 'Grey_Blood_Tubes':
 		sendTextMessage(senderID, "Additive: Potassium oxalate and Sodium fluoride \nWhat additive does: Sodium fluoride acts as an antiglycolytic agent to ensure that no further glucose breakdown occurs within the sample after it is taken. Potassium oxalate removes calcium and acts as an anticoagulant. \nLaboratory uses: Chemistry testing, especially glucose(sugar) and lactate, Glucose tolerance test (GTT)");
 		break;
-		
+
 	  case 'Royal_Blue_Blood_Tubes':
 		sendTextMessage(senderID, "Additive: Sodium Heparin also Sodium EDTA \nWhat additive does: Inhibits Thrombin formation to prevent \nLaboratory uses: Chemistry trace elements (such as Zinc, Copper, Lead and Mercury), toxicology, and nutritional chemistry testing");
 		break;
-		
+
 	  case 'Black_Blood_Tubes':
 		sendTextMessage(senderID, "Additive: Sodium Citrate \nWhat additive does: Forms calcium salts to remove calcium \nLaboratory uses: paediatric ESR");
-		break;	
-		
+		break;
+
 	  case 'Type1_DM_Chart':
 		sendTestImageMessage(senderID, "/dm/type1-dm.jpg");
         break;
-        
+
       case 'Type2_DM_Chart':
 		sendTestImageMessage(senderID, "/dm/type2-dm.jpg");
         break;
-        
+
       case 'Gross_Motor_Developmental_Milestones':
 		sendTestImageMessage(senderID, "/developmental-milestones/gross-motor-milestones2.jpg");
 		break;
-		
+
 	  case 'Fine_Motor_Developmental_Milestones':
 		sendTestImageMessage(senderID, "/developmental-milestones/fine-motor-milestones.jpg");
 		break;
-		
+
 	  case 'Social_Developmental_Milestones':
 		sendTestImageMessage(senderID, "/developmental-milestones/social-milestones.jpg");
 		break;
-		
+
 	  case 'Language_Developmental_Milestones':
 		sendTestImageMessage(senderID, "/developmental-milestones/language-milestones.jpg");
 		break;
-		
+
 	  case 'Cephalexin_Payload':
-		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nFirst-generation cephalosporin antibacterial"); 
+		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nFirst-generation cephalosporin antibacterial");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nSkin infections due to staphylococci and/or streptococci: impetigo, furuncle, erysipelas and superficial cellulitis");
 		sendTextMessage(senderID, "Presentation \n💊💊💊💊💊💊 \n250 mg capsule \n125 mg/5 ml powder");
 		sendTextMessage(senderID, "Dosage \n💊💊💊💊💊💊 \nNeonate under 7 days: \n50 mg/kg/day in 2 divided doses \nNeonate 7 to 28 days: \n75 mg/kg/day in 3 divided doses \nThe exact dose should be calculated according to the newborn\’s weight\. \nChild 1 month to 12 years: \n25 to 50 mg/kg/day in 2 divided doses \nChild over 12 years and adult: \n2 g/day in 2 divided doses");
@@ -317,15 +317,15 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Contra-indications, adverse effects, precautions \n💣💣💣💣💣 \nDo not administer to patients with allergy to cephalosporin\. \nAdminister with caution to patients with allergy to penicillin \(cross-sensitivity may occur\) and severe renal impairment \(reduce the dose\)\. \nMay cause: gastrointestinal disturbances \(particularly diarrhoea\)\, allergic reactions \(skin eruption\, fever\, pruritus\)\. \nPregnancy: \nno contra-indication \nBreast-feeding: \nno contra-indication");
 		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nTake preferably between meals\. \nAlso comes in 250 mg/5 ml powder for oral suspension\. \nStorage\: below 25°C \nFor the oral suspension \(powder or reconstituted suspension\)\: \nfollow manufacturer\’s instructions");
 		break;
-		
+
 	  case 'Diabetes_Payload':
 		sendDiabetesQuickReply(senderID);
 		break;
-		
+
 	  case 'Test_Tubes_Payload':
 		sendBloodTubeGenericMessage(senderID);
 		break;
-		
+
 	  case 'Milestones_Payload':
 		sendMilestonesQuickReply(senderID);
 		break;
@@ -340,19 +340,19 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText.toLowerCase()) {
-      
+
 	  case 'test':
 		sendTextMessage(senderID, "color\?");
 		console.log(5);
 		break;
-	  
+
       case 'help':
 		sendGetStartedQuickReply(senderID);
 		break;
-      
+
       case 'cephalexin':
       case 'cefalexin':
-		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nFirst-generation cephalosporin antibacterial"); 
+		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nFirst-generation cephalosporin antibacterial");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nSkin infections due to staphylococci and/or streptococci: impetigo, furuncle, erysipelas and superficial cellulitis");
 		sendTextMessage(senderID, "Presentation \n💊💊💊💊💊💊 \n250 mg capsule \n125 mg/5 ml powder");
 		sendTextMessage(senderID, "Dosage \n💊💊💊💊💊💊 \nNeonate under 7 days: \n50 mg/kg/day in 2 divided doses \nNeonate 7 to 28 days: \n75 mg/kg/day in 3 divided doses \nThe exact dose should be calculated according to the newborn\’s weight\. \nChild 1 month to 12 years: \n25 to 50 mg/kg/day in 2 divided doses \nChild over 12 years and adult: \n2 g/day in 2 divided doses");
@@ -365,7 +365,7 @@ function receivedMessage(event) {
 	  case 'ygh-opd':
 	  case 'ygh opd':
 		sendTestImageMessage(senderID, "/yghopd/ygh-opd.jpg");
-		break;		
+		break;
 
 	  case 'rabies vaccine':
 		sendTestImageMessage(senderID, "/vaccine/rabies-vaccine-myanmar.jpg");
@@ -394,7 +394,7 @@ function receivedMessage(event) {
 	  case 'ငါးပိရည္':
 		sendTestAudioMessage(senderID, "/recording/May-8-11-06-AM-nga-pee-yay-MWD.mp3");
         break;
-		
+
 	  case 'myanmar health centers':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/mm-health-centers.jpg");
 		sendTextMessage(senderID, "For details map view of each states\, please type given names\- \nayeyarwadi\,\nbago\,\nchin\,\nkachin\,\nkayar\,\nkayin\,\nmagwe\,\nmandalay\,\nmon\,\nnaypyitaw\,\nrakhine\,\nsagaing\,\nshan\,\ntanintharyi\,\nyangon\. \n\(either capital or small\)");
@@ -403,7 +403,7 @@ function receivedMessage(event) {
 	  case 'ayeyarwadi':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/ayeyarwadi.jpg");
 		break;
-		
+
 	  case 'bago':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/bago.jpg");
 		break;
@@ -411,190 +411,190 @@ function receivedMessage(event) {
 	  case 'chin':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/chin.jpg");
 		break;
-		
+
 	  case 'kachin':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/kachin.jpg");
-		break;	
-		
+		break;
+
 	  case 'kayar':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/kayar.jpg");
 		break;
-		
+
 	  case 'kayin':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/kayin.jpg");
 		break;
-		
+
 	  case 'magwe':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/magwe.jpg");
 		break;
-		
+
 	  case 'mandalay':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/mandalay.jpg");
 		break;
-		
+
 	  case 'mon':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/mon.jpg");
 		break;
-		
+
 	  case 'naypyitaw':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/naypyitaw.jpg");
-		break;	
-		
+		break;
+
 	  case 'rakhine':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/rakhine.jpg");
 		break;
-		
+
 	  case 'sagaing':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/sagaing.jpg");
-		break;	
-		
+		break;
+
 	  case 'shan':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/shan.jpg");
 		break;
-		
+
 	  case 'tanintharyi':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/tanintharyi.jpg");
-		break;	
-		
+		break;
+
 	  case 'yangon':
 		sendTestImageMessage(senderID, "/myanmar-health-centers/yangon.jpg");
 		break;
 	  case 'foodborne diseases':
 		sendFoodborneQuickReply(senderID);
 		break;
-		
+
 	  case 'aeromonas enteritis':
 	  case 'aeromonas':
 	  case 'aeromonas hydrophila':
 		sendTestImageMessage(senderID, "/foodborne/fb_aeromonas_enteritis.PNG");
 		break;
-		
+
 	  case 'amoebiasis':
 	  case 'amoebic dysentery':
 	  case 'entamoeba histolytica':
 		sendTestImageMessage(senderID, "/foodborne/fb_amoebiasis.png");
 		break;
-		
+
 	  case 'anisakiasis':
 	  case 'anisakis':
 	  case 'anisakis spp':
 		sendTestImageMessage(senderID, "/foodborne/fb_anisakiasis.png");
 		break;
-		
+
 	  case 'ascariasis':
 	  case 'ascaris lumbricoides':
 		sendTestImageMessage(senderID, "/foodborne/fb_ascariasis.png");
 		break;
-		
+
 	  case 'bacillus cereus':
 		sendTestImageMessage(senderID, "/foodborne/fb_bacillus_cereus.png");
 		break;
-		
+
 	  case 'botulism':
 		sendTestImageMessage(senderID, "/foodborne/fb_botulism.png");
 		break;
-		
+
 	  case 'brucellosis':
 		sendTestImageMessage(senderID, "/foodborne/fb_brucellosis.png");
 		break;
-		
+
 	  case 'campylobacteriosis':
 		sendTestImageMessage(senderID, "/foodborne/fb_campylobacteriosis.png");
 		break;
-		
+
 	  case 'cholera':
 		sendTestImageMessage(senderID, "/foodborne/fb_cholera.png");
 		break;
-		
+
 	  case 'clonorchiasis':
 		sendTestImageMessage(senderID, "/foodborne/fb_clonorchiasis.png");
 		break;
-		
+
 	  case 'clostridium perfringens':
 		sendTestImageMessage(senderID, "/foodborne/fb_clostridium_perfringens.png");
 		break;
-		
+
 	  case 'cryptosporidiosis':
 		sendTestImageMessage(senderID, "/foodborne/fb_cryptosporidiosis.png");
 		break;
-		
+
 	  case 'escherichia coli':
 		sendTestImageMessage(senderID, "/foodborne/fb_escherichia_coli-1.png");
 		sendTestImageMessage(senderID, "/foodborne/fb_escherichia_coli-2.png");
 		break;
-		
+
 	  case 'fascioliasis':
 		sendTestImageMessage(senderID, "/foodborne/fb_fascioliasis.png");
 		break;
-		
+
 	  case 'giardiasis':
 		sendTestImageMessage(senderID, "/foodborne/fb_giardiasis.png");
 		break;
-		
+
 	  case 'hepatitis a':
 		sendTestImageMessage(senderID, "/foodborne/fb_hepatitis_a.png");
 		break;
-		
+
 	  case 'listeriosis':
 		sendTestImageMessage(senderID, "/foodborne/fb_listeriosis.png");
 		break;
-		
+
 	  case 'opisthorchiasis':
 		sendTestImageMessage(senderID, "/foodborne/fb_opisthorchiasis.png");
 		break;
-		
+
 	  case 'paragonimiasis':
 		sendTestImageMessage(senderID, "/foodborne/fb_paragonimiasis.png");
 		break;
-		
+
 	  case 'poliomyelitis':
 		sendTestImageMessage(senderID, "/foodborne/fb_poliomyelitis.png");
 		break;
-		
+
 	  case 'salmonellosis':
 		sendTestImageMessage(senderID, "/foodborne/fb_salmonellosis.png");
 		break;
-		
+
 	  case 'shigellosis':
 		sendTestImageMessage(senderID, "/foodborne/fb_shigellosis.png");
 		break;
-		
+
 	  case 'staphylococcus aureus':
 		sendTestImageMessage(senderID, "/foodborne/fb_staphylococcus_aureus.png");
 		break;
-		
+
 	  case 'taeniasis':
 		sendTestImageMessage(senderID, "/foodborne/fb_taeniasis.png");
 		break;
-		
+
 	  case 'toxoplasmosis':
 		sendTestImageMessage(senderID, "/foodborne/fb_toxoplasmosis.png");
 		break;
-		
+
 	  case 'trichinellosis':
 		sendTestImageMessage(senderID, "/foodborne/fb_trichinellosis.png");
 		break;
-		
+
 	  case 'typhoid':
 		sendTestImageMessage(senderID, "/foodborne/fb_typhoid.png");
 		break;
-		
+
 	  case 'vibrio parahaemolyticus':
 		sendTestImageMessage(senderID, "/foodborne/fb_vibrio_parahaemolyticus.png");
 		break;
-		
+
 	  case 'vibrio vulnificus':
 		sendTestImageMessage(senderID, "/foodborne/fb_vibrio_vulnificus.png");
 		break;
-		
+
 	  case 'viral gastroenteritis':
 		sendTestImageMessage(senderID, "/foodborne/fb_viral_gastroenteritis.png");
 		break;
-		
+
 	  case 'yersiniosis':
 		sendTestImageMessage(senderID, "/foodborne/fb_yersiniosis.png");
 		break;
-		
+
 	  case 'cefixime':
 		sendTextMessage(senderID, "Therapeutic action \n💊💊💊💊💊💊 \nThird-generation cephalosporin antibacterial");
 		sendTextMessage(senderID, "Indications \n🎯🎯🎯🎯🎯 \nTyphoid fever in children \nAcute cystitis in girls over 2 years\, pregnant women and lactating women \nAcute pyelonephritis in adults \nCervicitis and urethritis due to Neisseria gonorrhoeae \(in combination with a treatment for chlamydia\)");
@@ -604,7 +604,7 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Contra-indications, adverse effects, precautions \n💣💣💣💣💣 \nDo not administer to patients with allergy to cephalosporins\. \nAdminister with caution to penicillin-allergic patients \(cross-sensitivity may occur\) and in patients with severe renal impairment \(reduce dosage\)\. \nMay cause: gastrointestinal disturbances \(especially diarrhoea\)\, headache\, dizziness\, allergic reactions \(rash\, pruritus\, fever\)\. In the event of allergic reaction\, stop treatment immediately\. \nPregnancy: no contra-indication \nBreast-feeding: no contra-indication");
 		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nAlso comes in 400 mg capsules \nStorage: below 25°C \nFor the oral suspension \(powder or reconstituted suspension\): follow manufacturer\’s instructions\.");
 		break;
-		
+
 	  case 'chlorphenamine':
 	  case 'chlorpheniramine':
 	  case 'burmeton':
@@ -617,88 +617,88 @@ function receivedMessage(event) {
 		sendTextMessage(senderID, "Contra-indications, adverse effects, precautions \n💣💣💣💣💣 \nAdminister with caution and monitor use in patients with prostate disorders or closed-angle glaucoma\, patients \> 60 years and children \(risk of agitation\, excitability\)\. \nMay cause: drowsiness \(caution when driving/operating machinery\)\, anticholinergic effects \(dry mouth\, blurred vision\, constipation\, tachycardia\, disorders of micturition\)\, headache\, tremor\, allergic reactions\. \nMonitor combination with CNS depressants \(opioid analgesics\, antipsychotics\, sedatives\, antidepressants\, etc\.\)\. \nAvoid alcohol during treatment\. \nPregnancy: no contra-indication: NO PROLONGED TREATMENT \nBreast-feeding: no contra-indication: monitor the child for excessive somnolence\.");
 		sendTextMessage(senderID, "Remarks \n✔✔✔✔✔ \nChlorphenamine is less sedating than promethazine. \nDexchlorpheniramine has the same indications: \n• child 1 to 2 years: 0.25 mg 2 to 3 times daily \n• child 2 to 6 years: 0.5 mg 2 to 3 times daily \n• child 6 to 12 years: 1 mg 3 to 4 times daily \n• child over 12 years and adult: 2 mg 3 to 4 times daily \nStorage: below 25°C");
 		break;
-		
+
       case 'test button':
         sendTestButtonMessage(senderID);
         break;
-        
+
       case 'test image':
         sendTestImageMessage(senderID, "/assets/rift.png");
         break;
-        
+
       case 'amiodarone':
         sendTestImageMessage(senderID, "/idd/amiodarone.jpg");
         break;
-      
+
 	  case 'dobutamine':
         sendTestImageMessage(senderID, "/idd/dobutamine.jpg");
         break;
-        
+
       case 'dopamine':
         sendTestImageMessage(senderID, "/idd/dopamine.jpg");
         break;
-        
+
       case 'fentanyl':
         sendTestImageMessage(senderID, "/idd/fentanyl.jpg");
         break;
-        
+
       case 'heparin':
         sendTestImageMessage(senderID, "/idd/heparin.jpg");
         break;
-      
+
       case 'insulin':
         sendTestImageMessage(senderID, "/idd/insulin.jpg");
         break;
-      
+
       case 'labetalol':
         sendTestImageMessage(senderID, "/idd/labetalol.jpg");
         break;
-      
+
       case 'lasix':
         sendTestImageMessage(senderID, "/idd/lasix.jpg");
         break;
-        
+
       case 'midazolam':
         sendTestImageMessage(senderID, "/idd/midazolam.jpg");
         break;
-      
+
       case 'nitroglycerine':
         sendTestImageMessage(senderID, "/idd/nitroglycerine.jpg");
         break;
-      
+
       case 'octreotide':
         sendTestImageMessage(senderID, "/idd/octreotide.jpg");
         break;
-      
+
       case 'phenytoin':
         sendTestImageMessage(senderID, "/idd/phenytoin.jpg");
         break;
-      
+
       case 'propofol':
         sendTestImageMessage(senderID, "/idd/propofol.jpg");
         break;
-        
+
       case 'vasopressin':
         sendTestImageMessage(senderID, "/idd/vasopressin.jpg");
         break;
-      
+
 	  case 'hi':
 	  case 'hello':
 		sendTextMessage(senderID, "Hi. Nice to meet you. This is Test Bot");
 		break;
-		
+
 	  case 'link':
 		sendTextMessage(senderID, "http://www.mobilemonk.tv/conversational-commerce-rise-of-the-chatbots");
 		break;
-		
+
 	  case 'မင်္ဂလာပါ':
 		sendTextMessage(senderID, "မင်္ဂလာပါ ကျွန်တော်ကတော့ စမ်းသပ်နေသော စက်ရုပ်ပါ");
 		break;
-		
+
 	  case 'မဂၤလာပါ':
 		sendTextMessage(senderID, "မဂၤလာပါ က်ြန္ေတာ္ကေတာ့ စမ္းသပ္ေနေသာ စက္ရုပ္ပါ");
 		break;
-		
+
 	  case 'photo':
 	  case 'image':
         sendImageMessage(senderID);
@@ -716,7 +716,7 @@ function receivedMessage(event) {
 	  case 'video':
         sendVideoMessage(senderID, "/assets/allofus480.mov");
         break;
-        
+
       case 'tracheostomy':
 		sendVideoMessage(senderID, "/vid/tracheostomy.mp4");
 		break;
@@ -736,7 +736,7 @@ function receivedMessage(event) {
       case 'generic':
         sendGenericMessage(senderID);
         break;
-        
+
       case 'blood collection tubes':
       case 'blood tubes':
       case 'blood collection tube':
@@ -745,7 +745,7 @@ function receivedMessage(event) {
       case 'test tube':
         sendBloodTubeGenericMessage(senderID);
         break;
-        
+
 	  case 'test generic':
 		sendTestGenericMessage(senderID);
 		break;
@@ -757,34 +757,34 @@ function receivedMessage(event) {
       case 'quick reply':
         sendQuickReply(senderID);
         break;
-        
+
       case 'milestones':
       case 'developmental milestones':
 		//sendTestImageMessage(senderID, "/developmental-milestones/gross-motor-milestones1.jpg");
 		sendMilestonesQuickReply(senderID);
 		break;
-        
+
       case 'diabetes':
 		sendDiabetesQuickReply(senderID);
 		break;
 
       case 'read receipt':
         sendReadReceipt(senderID);
-        break;        
+        break;
 
       case 'typing on':
         sendTypingOn(senderID);
-        break;        
+        break;
 
       case 'typing off':
         sendTypingOff(senderID);
-        break; 
-        
+        break;
+
    //   case 'my profile':
 	//	getUserProfile();
 	//	sendTextMessage(senderID, userFirstName);
 	//	break;
-		
+
       case 'account linking':
         sendAccountLinking(senderID);
         break;
@@ -808,7 +808,7 @@ function receivedMessage(event) {
 	});
 
 	//console.log(messageAttachmenturl);
-	
+
   }
 }
 
@@ -818,7 +818,7 @@ function receivedMessage(event) {
 
 /*function sendUserNameMessage(recipientId) {
 	var firstname = getUserProfile();
-	
+
   var messageData = {
     recipient: {
       id: recipientId
@@ -828,12 +828,12 @@ function receivedMessage(event) {
       metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
-  
+
   callSendAPI(messageData);
 }
 */
  /*function getUserProfile() {
-	
+
   request({
     uri: 'https://graph.facebook.com/v2.6/me?fields=first_name,last_name,profile_pic,locale,timezone,gender',
     qs: { access_token: token },
@@ -841,17 +841,17 @@ function receivedMessage(event) {
     json: true
 
   }, function (error, response, body) {
-  var fbinfo = new Array(body.first_name, body.last_name, body.profile_pic); 
+  var fbinfo = new Array(body.first_name, body.last_name, body.profile_pic);
    var userFirstName = fbinfo[0];
    return userFirstName;
   }
-  ); 
+  );
 }
  */
 /*
  * Delivery Confirmation Event
  *
- * This event is sent to confirm the delivery of a message. Read more about 
+ * This event is sent to confirm the delivery of a message. Read more about
  * these fields at https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-delivered
  *
  */
@@ -865,54 +865,55 @@ function receivedDeliveryConfirmation(event) {
 
   if (messageIDs) {
     messageIDs.forEach(function(messageID) {
-      console.log("Received delivery confirmation for message ID: %s", 
-        messageID);
+// commenting these logging for testing purpose
+    //  console.log("Received delivery confirmation for message ID: %s",
+    //    messageID);
     });
   }
 
-  console.log("All message before %d were delivered.", watermark);
+  // console.log("All message before %d were delivered.", watermark);
 }
 
 
 /*
  * Postback Event
  *
- * This event is called when a postback is tapped on a Structured Message. 
+ * This event is called when a postback is tapped on a Structured Message.
  * https://developers.facebook.com/docs/messenger-platform/webhook-reference/postback-received
- * 
+ *
  */
 function receivedPostback(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfPostback = event.timestamp;
 
-  // The 'payload' param is a developer-defined field which is set in a postback 
-  // button for Structured Messages. 
+  // The 'payload' param is a developer-defined field which is set in a postback
+  // button for Structured Messages.
   var payload = event.postback.payload;
 
-  console.log("Received postback for user %d and page %d with payload '%s' " + 
+  console.log("Received postback for user %d and page %d with payload '%s' " +
     "at %d", senderID, recipientID, payload, timeOfPostback);
-    
+
     // test payload for test button
     if (payload) {
-	  
+
 	 switch (payload) {
 	  case 'testing_postback_button_was_clicked':
 		sendTextMessage(senderID, "testing sucessful");
 		break;
-		
+
 	  case 'GET_STARTED_PAYLOAD':
 		sendGetStartedQuickReply(senderID);
 		break;
-		
+
 	  default:
         sendTextMessage(senderID, "Postback called");
 	}
 		}
 
-  // When a postback is called, we'll send a message back to the sender to 
+  // When a postback is called, we'll send a message back to the sender to
   // let them know it was successful
-  
+
 }
 
 /*
@@ -920,7 +921,7 @@ function receivedPostback(event) {
  *
  * This event is called when a previously-sent message has been read.
  * https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-read
- * 
+ *
  */
 function receivedMessageRead(event) {
   var senderID = event.sender.id;
@@ -929,9 +930,9 @@ function receivedMessageRead(event) {
   // All messages before watermark (a timestamp) or sequence have been seen.
   var watermark = event.read.watermark;
   var sequenceNumber = event.read.seq;
-
-  console.log("Received message read event for watermark %d and sequence " +
-    "number %d", watermark, sequenceNumber);
+// commenting these logging for testing purpose
+//  console.log("Received message read event for watermark %d and sequence " +
+//    "number %d", watermark, sequenceNumber);
 }
 
 /*
@@ -940,7 +941,7 @@ function receivedMessageRead(event) {
  * This event is called when the Link Account or UnLink Account action has been
  * tapped.
  * https://developers.facebook.com/docs/messenger-platform/webhook-reference/account-linking
- * 
+ *
  */
 function receivedAccountLink(event) {
   var senderID = event.sender.id;
@@ -985,15 +986,15 @@ function sendConvoBox (recipientId) {
 			text: "Thanks for purchase, This item will deliver to your location as soon as possible. \nWhat is your name?",
 			metadata: "DEVELOPER_DEFINED_METADATA"
 		}
-		
+
 	};
-	
+
 	callSendAPI(messageData);
-	
+
 }
 
 /*
- * Send cephalexin dose png image 
+ * Send cephalexin dose png image
  *
  */
 function sendCephalexinDoseImageMessage(recipientId) {
@@ -1015,7 +1016,7 @@ function sendCephalexinDoseImageMessage(recipientId) {
 }
 
 /*
- * Send burmeton dose png image 
+ * Send burmeton dose png image
  *
  */
 function sendBurmetonDoseImageMessage(recipientId) {
@@ -1095,7 +1096,7 @@ function sendTestAudioMessage(recipientId, audiourl)	{
 			}
 		}
 	};
-	
+
 	callSendAPI(messageData);
 }
 
@@ -1176,7 +1177,7 @@ function sendTestImageMessage(recipientId, imageurl)	{
 			}
 		}
 	};
-	
+
 	callSendAPI(messageData);
 }
 
@@ -1211,7 +1212,7 @@ function sendButtonMessage(recipientId) {
         }
       }
     }
-  };  
+  };
 
   callSendAPI(messageData);
 }
@@ -1247,7 +1248,7 @@ function sendTestButtonMessage(recipientId) {
         }
       }
     }
-  };  
+  };
 
   callSendAPI(messageData);
 }
@@ -1269,7 +1270,7 @@ function sendGenericMessage(recipientId) {
           elements: [{
             title: "rift",
             subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
+            item_url: "https://www.oculus.com/en-us/rift/",
             image_url: SERVER_URL + "/assets/rift.png",
             buttons: [{
               type: "web_url",
@@ -1283,7 +1284,7 @@ function sendGenericMessage(recipientId) {
           }, {
             title: "touch",
             subtitle: "Your Hands, Now in VR",
-            item_url: "https://www.oculus.com/en-us/touch/",               
+            item_url: "https://www.oculus.com/en-us/touch/",
             image_url: SERVER_URL + "/assets/touch.png",
             buttons: [{
               type: "web_url",
@@ -1298,7 +1299,7 @@ function sendGenericMessage(recipientId) {
         }
       }
     }
-  };  
+  };
 
   callSendAPI(messageData);
 }
@@ -1318,7 +1319,7 @@ function sendBloodTubeGenericMessage(recipientId) {
           elements: [{
             title: "Common Blood Collection Tube",
             subtitle: "their additives and laboratory uses.",
-            item_url: "http://www.medcyclopedia.net/common-blood-collection-tubes-their-additives-and-laboratory-uses/",               
+            item_url: "http://www.medcyclopedia.net/common-blood-collection-tubes-their-additives-and-laboratory-uses/",
             image_url: SERVER_URL + "/bt/blood-tubes.jpg",
             buttons: [{
               type: "web_url",
@@ -1371,7 +1372,7 @@ function sendBloodTubeGenericMessage(recipientId) {
         }
       ]
     }
-  };  
+  };
 
   callSendAPI(messageData);
 }
@@ -1468,7 +1469,7 @@ function sendMyanmarHealthCentersQuickReply(recipientId, imageurl) {
         }
       ]
     }
-  };  
+  };
 
   callSendAPI(messageData);
 }
@@ -1491,7 +1492,7 @@ function sendTestGenericMessage(recipientId) {
           elements: [{
             title: "rift",
             subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
+            item_url: "https://www.oculus.com/en-us/rift/",
             image_url: SERVER_URL + "/assets/rift.png",
             buttons: [{
               type: "web_url",
@@ -1506,7 +1507,7 @@ function sendTestGenericMessage(recipientId) {
           }, {
             title: "touch",
             subtitle: "Your Hands, Now in VR",
-            item_url: "https://www.oculus.com/en-us/touch/",               
+            item_url: "https://www.oculus.com/en-us/touch/",
             image_url: SERVER_URL + "/assets/touch.png",
             buttons: [{
               type: "web_url",
@@ -1521,7 +1522,7 @@ function sendTestGenericMessage(recipientId) {
         }
       }
     }
-  };  
+  };
 
   callSendAPI(messageData);
 }
@@ -1546,8 +1547,8 @@ function sendReceiptMessage(recipientId) {
           recipient_name: "Peter Chang",
           order_number: receiptId,
           currency: "USD",
-          payment_method: "Visa 1234",        
-          timestamp: "1428444852", 
+          payment_method: "Visa 1234",
+          timestamp: "1428444852",
           elements: [{
             title: "Oculus Rift",
             subtitle: "Includes: headset, sensor, remote",
@@ -1884,14 +1885,14 @@ function sendAccountLinking(recipientId) {
         }
       }
     }
-  };  
+  };
 
   callSendAPI(messageData);
 }
 
 /*
- * Call the Send API. The message data goes in the body. If successful, we'll 
- * get the message id in a response 
+ * Call the Send API. The message data goes in the body. If successful, we'll
+ * get the message id in a response
  *
  */
 function callSendAPI(messageData) {
@@ -1907,16 +1908,18 @@ function callSendAPI(messageData) {
       var messageId = body.message_id;
 
       if (messageId) {
-        console.log("Successfully sent message with id %s to recipient %s", 
-          messageId, recipientId);
+      // comment these logging for testing purpose
+
+      //  console.log("Successfully sent message with id %s to recipient %s",
+      //  messageId, recipientId);
       } else {
-      console.log("Successfully called Send API for recipient %s", 
-        recipientId);
+      // console.log("Successfully called Send API for recipient %s",
+      //  recipientId);
       }
     } else {
-      console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
+      // console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
     }
-  });  
+  });
 }
 
 //post persistent menu
@@ -1973,7 +1976,7 @@ function callSendAPI(messageData) {
 	//			} else {
 	//				console.log("persistent menu successfully set with %s result", resultjson);
 	//				}
-			
+
 			if (!error && response.statusCode == 200)	{
 				console.log("persistent menu successfully set with %s result", resultjson);
 				} else {
@@ -1982,7 +1985,7 @@ function callSendAPI(messageData) {
 			}
 	);
 	}
-	
+
 setPersistentMenu();
 */
 
@@ -1992,7 +1995,7 @@ setPersistentMenu();
 		uri: 'https://graph.facebook.com/v2.6/me/messenger_profile',
 		qs: {access_token: token},
 		method: 'POST',
-		json: { 
+		json: {
   "get_started":{
     "payload":"GET_STARTED_PAYLOAD"
   }
@@ -2004,7 +2007,7 @@ setPersistentMenu();
 		//		} else {
 		//			console.log("persistent menu successfully set with %s result", resultjson);
 		//			}
-			
+
 			if (!error && response.statusCode == 200)	{
 				console.log("get started button successfully set with %s result", resultjson);
 				} else {
