@@ -801,6 +801,7 @@ function receivedMessage(event) {
   		console.log('Program output:', stdout);
 		readLastLines.read('/home/soepaing/.pm2/logs/devbot-error-3.log', 5)
     			.then((lines) => sendTextMessage(senderID, lines));
+          sendTextMessage(senderID, "The photo was saved to https\:\/\/health\.formyanmar\.tk\/" + my_random_string + "\.jpg" );
 		//var wgetjson = JSON.parse(stderr);
   		//console.log('Program stderr:', wgetjson);
 		//sendTextMessage(senderID, stdout);
