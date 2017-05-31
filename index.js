@@ -26,9 +26,9 @@ const readLastLines = require('read-last-lines');
 //testing calling custom modules
 const mymodule = require('mymodule')
 // -> my_module initialized.
-mymodule.printA();
+//mymodule.printA();
 // -> my_module worked.
-mymodule.printB();
+//mymodule.printB();
 
 app.set('port', (process.env.PORT || 2000))
 
