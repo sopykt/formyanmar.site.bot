@@ -799,7 +799,7 @@ function receivedMessage(event) {
 	shell.exec('wget --accept .jpg,.jpeg --cookies=on -p ' + messageAttachmenturl + ' -O ../mynodeapp/public/' + my_random_string + '.jpg', function(code, stdout, stderr) {
   		console.log('Exit code:', code);
   		console.log('Program output:', stdout);
-		readLastLines.read('/home/soepaing/.pm2/logs/devbot-error-5.log', 5)
+		readLastLines.read('/home/soepaing/.pm2/logs/devbot-error-3.log', 5)
     			.then((lines) => sendTextMessage(senderID, lines));
 		//var wgetjson = JSON.parse(stderr);
   		//console.log('Program stderr:', wgetjson);
