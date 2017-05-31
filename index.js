@@ -178,9 +178,9 @@ function receivedMessage(event) {
 
 
 // comment out this 3 lines for logging received message
-//  console.log("Received message for user %d and page %d at %d with message:",
-//    senderID, recipientID, timeOfMessage);
-//  console.log(JSON.stringify(message));
+  console.log("Received message for user %d and page %d at %d with message:",
+    senderID, recipientID, timeOfMessage);
+  console.log(JSON.stringify(message));
 
   var isEcho = message.is_echo;
   var messageId = message.mid;
@@ -195,9 +195,9 @@ function receivedMessage(event) {
 
   if (isEcho) {
     // Just logging message echoes to console -- was commenting for testing purpose
-    //console.log("Received echo for message %s and app %d with metadata %s",
-    //  messageId, appId, metadata);
-    // return;
+    console.log("Received echo for message %s and app %d with metadata %s",
+      messageId, appId, metadata);
+     return;
   } else if (quickReply) {
     var quickReplyPayload = quickReply.payload;
     console.log("Quick reply for message %s with payload %s",
@@ -341,10 +341,10 @@ function receivedMessage(event) {
     // the text we received.
     switch (messageText.toLowerCase()) {
 
-	  case 'test':
-		sendTextMessage(senderID, "color\?");
-		console.log(5);
-		break;
+	  //case 'test':
+		//sendTextMessage(senderID, "color\?");
+		//console.log(5);
+		//break;
 
       case 'help':
 		sendGetStartedQuickReply(senderID);
@@ -866,12 +866,12 @@ function receivedDeliveryConfirmation(event) {
   if (messageIDs) {
     messageIDs.forEach(function(messageID) {
 // commenting these logging for testing purpose
-    //  console.log("Received delivery confirmation for message ID: %s",
-    //    messageID);
+      console.log("Received delivery confirmation for message ID: %s",
+        messageID);
     });
   }
 
-  // console.log("All message before %d were delivered.", watermark);
+   console.log("All message before %d were delivered.", watermark);
 }
 
 
@@ -931,8 +931,8 @@ function receivedMessageRead(event) {
   var watermark = event.read.watermark;
   var sequenceNumber = event.read.seq;
 // commenting these logging for testing purpose
-//  console.log("Received message read event for watermark %d and sequence " +
-//    "number %d", watermark, sequenceNumber);
+  console.log("Received message read event for watermark %d and sequence " +
+    "number %d", watermark, sequenceNumber);
 }
 
 /*
@@ -1910,14 +1910,14 @@ function callSendAPI(messageData) {
       if (messageId) {
       // comment these logging for testing purpose
 
-      //  console.log("Successfully sent message with id %s to recipient %s",
-      //  messageId, recipientId);
+        console.log("Successfully sent message with id %s to recipient %s",
+        messageId, recipientId);
       } else {
-      // console.log("Successfully called Send API for recipient %s",
-      //  recipientId);
+       console.log("Successfully called Send API for recipient %s",
+        recipientId);
       }
     } else {
-      // console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
+       console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
     }
   });
 }
