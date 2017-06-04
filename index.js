@@ -346,6 +346,20 @@ function receivedMessage(event) {
 		//console.log(5);
 		//break;
 
+      case 'government listing':
+      case 'government contact':
+      case 'government list':
+      case 'government lists':
+      case 'government contacts':
+      case 'ministry listing':
+      case 'ministry contact':
+      case 'ministry list':
+      case 'ministry lists':
+      case 'ministry contacts':
+      case 'ministries':
+      case 'ministers':
+    sendTextMessage(senderID, "http://www.mediafire.com/file/ztej8l72th8o7hh/Government_Listing_02Jun2017.xlsx");
+
       case 'help':
 		sendGetStartedQuickReply(senderID);
 		break;
