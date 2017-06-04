@@ -358,7 +358,10 @@ function receivedMessage(event) {
       case 'ministry contacts':
       case 'ministries':
       case 'ministers':
+      case 'government':
+      case 'ministry':
     sendTextMessage(senderID, "http://www.mediafire.com/file/ztej8l72th8o7hh/Government_Listing_02Jun2017.xlsx");
+    break;
 
       case 'help':
 		sendGetStartedQuickReply(senderID);
