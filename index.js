@@ -810,7 +810,7 @@ function receivedMessage(event) {
         sendTextMessage(senderID, messageText);
     }
   } else if (messageAttachments) {
-    sendTextMessage(senderID, "Message with attachment received");
+    if (message.attachments[0].type == "image"){
 	var messageAttachmenturl = "\"" + message.attachments[0].payload.url + "\"";
 	var my_random_string = chance.first();
 	shell.exec('wget --accept .jpg,.jpeg --cookies=on -p ' + messageAttachmenturl + ' -O ../mynodeapp/public/' + my_random_string + '.jpg', function(code, stdout, stderr) {
@@ -826,7 +826,9 @@ function receivedMessage(event) {
 	});
 
 	//console.log(messageAttachmenturl);
-
+}else{
+  sendTextMessage(senderID, "Message with attachment received");
+}
   }
 }
 
