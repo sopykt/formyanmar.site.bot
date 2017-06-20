@@ -1,4 +1,4 @@
-//This is still work in progress
+// This is still work in progress
 /*
 Please report any bugs to nicomwaks@gmail.com
 i have added console.log on line 48
@@ -1917,7 +1917,7 @@ function sendAccountLinking(recipientId) {
  */
 function callSendAPI(messageData) {
   request({
-    uri: 'https://graph.facebook.com/v2.6/me/messages',
+    uri: 'https://graph.facebook.com/v2.9/me/messages',
     qs: { access_token: token },
     method: 'POST',
     json: messageData
