@@ -340,7 +340,7 @@ function receivedMessage(event) {
 	  //split text into words for conditional responses
 	  //var values = text.split(" ");
 	  var what = messageText.match(/what/gi);
-	  var beebom = messageText.match(/beebom/gi);
+	  var developbot = messageText.match(/developbot/gi);
 	  var who = messageText.match(/who/gi);
 	  var you = messageText.match(/you/gi);
 	  var suggest = messageText.match(/suggest/gi);
@@ -351,6 +351,8 @@ function receivedMessage(event) {
 
     if (who != null && you != null) {
       sendTextMessage(senderID, "I have been asked not to discuss my identity online.");
+    }else if (what != null && developbot != null) {
+      sendTextMessage(senderID, "Developbot is the project for developing bot in facebook messenger platform by Dr. Soe Paing.");
     }else{
 
     // If we receive a text message, check to see if it matches any special
