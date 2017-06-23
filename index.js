@@ -335,6 +335,23 @@ function receivedMessage(event) {
   }
 
   if (messageText) {
+    // find special keywords from messageText and reply accordingly
+    messageText = messageText || "";
+	  //split text into words for conditional responses
+	  //var values = text.split(" ");
+	  var what = messageText.match(/what/gi);
+	  var beebom = messageText.match(/beebom/gi);
+	  var who = messageText.match(/who/gi);
+	  var you = messageText.match(/you/gi);
+	  var suggest = messageText.match(/suggest/gi);
+	  var random = messageText.match(/random/gi);
+	  var article = messageText.match(/article/gi);
+	  var iphone = messageText.match(/iphone/gi);
+	  var android = messageText.match(/android/gi);
+
+    if (who != null && you != null) {
+      sendTextMessage(senderID, "I have been asked not to discuss my identity online.");
+    }else{
 
     // If we receive a text message, check to see if it matches any special
     // keywords and send back the corresponding example. Otherwise, just echo
@@ -809,6 +826,7 @@ function receivedMessage(event) {
       default:
         sendTextMessage(senderID, messageText);
     }
+  }
   } else if (messageAttachments) {
     if (message.attachments[0].type == "image"){
 	var messageAttachmenturl = "\"" + message.attachments[0].payload.url + "\"";
