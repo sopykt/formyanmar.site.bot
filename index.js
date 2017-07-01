@@ -347,14 +347,24 @@ function receivedMessage(event) {
     var name = messageText.match(/name/gi);
 	  var suggest = messageText.match(/suggest/gi);
 	  var random = messageText.match(/random/gi);
-	  var article = messageText.match(/article/gi);
-	  var iphone = messageText.match(/iphone/gi);
-	  var android = messageText.match(/android/gi);
+	  var buy = messageText.match(/buy/gi);
+	  var anti = messageText.match(/anti/gi);
+	  var snake = messageText.match(/snake/gi);
+	  var buy_b = messageText.match(/ဝယ်/gi);
+	  var antisnakevenom_b = messageText.match(/မြွေဆိပ်ဖြေဆေး/gi);
 
     if (who != null && you != null) {
       sendTextMessage(senderID, "I have been asked not to discuss my identity online.");
     }else if (what != null && developbot != null) {
       sendTextMessage(senderID, "Developbot is the project for developing bot in facebook messenger platform by Dr. Soe Paing.");
+    }
+    else if (anti != null && snake != null && buy != null) {
+      sendTestImageMessage(senderID, "/assets/anti-snake-1.jpg");
+      sendTestImageMessage(senderID, "/assets/anti-snake-2.jpg");
+    }
+    else if (antisnakevenom_b != null && buy_b != null) {
+      sendTestImageMessage(senderID, "/assets/anti-snake-1.jpg");
+      sendTestImageMessage(senderID, "/assets/anti-snake-2.jpg");
     }
     else if (what != null && your != null && name != null) {
       sendTextMessage(senderID, "You can call me \"DevBot\".");
