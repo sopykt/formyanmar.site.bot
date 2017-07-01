@@ -345,9 +345,35 @@ function receivedMessage(event) {
 	  var you = messageText.match(/you/gi);
     var your = messageText.match(/your/gi);
     var name = messageText.match(/name/gi);
-	  var suggest = messageText.match(/suggest/gi);
-	  var random = messageText.match(/random/gi);
-	  var buy = messageText.match(/buy/gi);
+    // antidotes of drugs
+	  var antidote = messageText.match(/antidote/gi);
+	  var coumadin = messageText.match(/coumadin/gi);
+    var benzodiazepine = messageText.match(/benzodiazepine/gi);
+    var magnesium_sulfate = messageText.match(/magnesium sulfate/gi);
+    var heparin = messageText.match(/heparin/gi);
+    var tylenol = messageText.match(/tylenol/gi);
+    var opiate = messageText.match(/opiate/gi);
+    var cholinergic = messageText.match(/cholinergic/gi);
+    var digoxin = messageText.match(/digoxin/gi);
+    var acetaminophen = messageText.match(/acetaminophen/gi);
+    var iron = messageText.match(/iron/gi);
+    var alcohol_withdrawal = messageText.match(/alcohol withdrawal/gi);
+    var anticholinergic = messageText.match(/anticholinergic/gi);
+    var beta_blocker = messageText.match(/beta blocker/gi);
+    var methotrexate = messageText.match(/methotrexate/gi);
+    var anticoagulant = messageText.match(/anticoagulant/gi);
+    var aspirin = messageText.match(/aspirin/gi);
+    var ccb = messageText.match(/calcium channel blocker/gi);
+    var cyanide = messageText.match(/cyanide/gi);
+    var hydrofluoric_acid = messageText.match(/hydrofluoric acid/gi);
+    var insulin = messageText.match(/insulin/gi);
+    var isoniazid = messageText.match(/isoniazid/gi);
+    var methanol = messageText.match(/methanol/gi);
+    var ethylene_glycol = messageText.match(/ethylene glycol/gi);
+    var methemoglobin = messageText.match(/methemoglobin/gi);
+    var tricyclic_antidepressant = messageText.match(/tricyclic antidepressant/gi);
+    // anti-snake-venom
+    var buy = messageText.match(/buy/gi);
 	  var anti = messageText.match(/anti/gi);
 	  var snake = messageText.match(/snake/gi);
 	  var buy_b = messageText.match(/ဝယ်/gi);
@@ -365,6 +391,81 @@ function receivedMessage(event) {
     else if (antisnakevenom_b != null && buy_b != null) {
       sendTestImageMessage(senderID, "/assets/anti-snake-1.jpg");
       sendTestImageMessage(senderID, "/assets/anti-snake-2.jpg");
+    }
+    else if (antidote != null && coumadin != null) {
+      sendTextMessage(senderID, "Vitamin K");
+    }
+    else if (antidote != null && benzodiazepine != null) {
+      sendTextMessage(senderID, "Romazicon \(Flumazenil\)");
+    }
+    else if (antidote != null && magnesium_sulfate != null) {
+      sendTextMessage(senderID, "Calcium Gluconate");
+    }
+    else if (antidote != null && heparin != null) {
+      sendTextMessage(senderID, "Protamine Sulfate");
+    }
+    else if (antidote != null && tylenol != null) {
+      sendTextMessage(senderID, "Mucomyst");
+    }
+    else if (antidote != null && opiate != null) {
+      sendTextMessage(senderID, "Narcan \(Naloxone\)");
+    }
+    else if (antidote != null && cholinergic != null) {
+      sendTextMessage(senderID, "Atropine\, Pralidoxime \(2-PAM\)");
+    }
+    else if (antidote != null && digoxin != null) {
+      sendTextMessage(senderID, "Digiband");
+    }
+    else if (antidote != null && acetaminophen != null) {
+      sendTextMessage(senderID, "N-Acetylcysteine");
+    }
+    else if (antidote != null && iron != null) {
+      sendTextMessage(senderID, "Deferoxamine");
+    }
+    else if (antidote != null && alcohol_withdrawal != null) {
+      sendTextMessage(senderID, "Librium");
+    }
+    else if (antidote != null && anticholinergic != null) {
+      sendTextMessage(senderID, "Physostigmine");
+    }
+    else if (antidote != null && beta_blocker != null) {
+      sendTextMessage(senderID, "Glucagon");
+    }
+    else if (antidote != null && methotrexate != null) {
+      sendTextMessage(senderID, "Leucovorin");
+    }
+    else if (antidote != null && anticoagulant != null) {
+      sendTextMessage(senderID, "Vitamin K, FFP");
+    }
+    else if (antidote != null && aspirin != null) {
+      sendTextMessage(senderID, "Sodium Bicarbonate");
+    }
+    else if (antidote != null && ccb != null) {
+      sendTextMessage(senderID, "Calcium, Glucagon, Insulin");
+    }
+    else if (antidote != null && cyanide != null) {
+      sendTextMessage(senderID, "Tydroxycobalamine, Sodium thiosulfate");
+    }
+    else if (antidote != null && hydrofluoric_acid != null) {
+      sendTextMessage(senderID, "Calcium Gluconate");
+    }
+    else if (antidote != null && insulin != null) {
+      sendTextMessage(senderID, "Glucose");
+    }
+    else if (antidote != null && isoniazid != null) {
+      sendTextMessage(senderID, "Deferoxamine");
+    }
+    else if (antidote != null && methanol != null) {
+      sendTextMessage(senderID, "Ethanol");
+    }
+    else if (antidote != null && ethylene_glycol != null) {
+      sendTextMessage(senderID, "Fomepizole, Ethanol");
+    }
+    else if (antidote != null && methemoglobin != null) {
+      sendTextMessage(senderID, "Methylene Blue");
+    }
+    else if (antidote != null && tricyclic_antidepressant != null) {
+      sendTextMessage(senderID, "Sodium Bicarbonate");
     }
     else if (what != null && your != null && name != null) {
       sendTextMessage(senderID, "You can call me \"DevBot\".");
