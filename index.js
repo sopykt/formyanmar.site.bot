@@ -1322,7 +1322,10 @@ function sendTextMessage(recipientId, messageText) {
 function sendTestTextMessage(messageText) {
   var messageData = {
     recipient: {
-      id: "107003829801466"
+// my id     
+// id: "1487429057934939"
+// may may id
+      id: "1329664593737348"
     },
     message: {
       text: messageText,
@@ -1332,7 +1335,7 @@ function sendTestTextMessage(messageText) {
 
 callSendAPI(messageData);
 }
-sendTestTextMessage("Hi its worked");
+//sendTestTextMessage("Hi its worked");
 // this is test sendimage function
 function sendTestImageMessage(recipientId, imageurl)	{
 	var messageData = {
