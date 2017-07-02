@@ -1323,9 +1323,9 @@ function sendTestTextMessage(messageText) {
   var messageData = {
     recipient: {
 // my id     
-// id: "1487429057934939"
+id: "1487429057934939"
 // may may id
-      id: "1329664593737348"
+// id: "1329664593737348"
     },
     message: {
       text: messageText,
@@ -1336,6 +1336,11 @@ function sendTestTextMessage(messageText) {
 callSendAPI(messageData);
 }
 //sendTestTextMessage("Hi its worked");
+// send a text message to a user at specific date and time
+var CronJob = require('cron').CronJob;
+new CronJob(new Date("July 03, 2017 07:28:00"), function() {
+sendTestTextMessage("Hey I send you this message at specific date and time \"July 03, 2017 07:28:00\"");
+}, null, true, 'Asia/Yangon');
 // this is test sendimage function
 function sendTestImageMessage(recipientId, imageurl)	{
 	var messageData = {
