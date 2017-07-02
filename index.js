@@ -1324,10 +1324,14 @@ function sendTestTextMessage(messageText) {
     recipient: {
       id: "107003829801466"
     },
-    message: messageText,
-    metadata: "DEVELOPER_DEFINED_METADATA"
+    message: {
+      text: messageText,
+      metadata: "DEVELOPER_DEFINED_METADATA"
   }
 };
+
+callSendAPI(messageData);
+}
 sendTestTextMessage("Hi its worked");
 // this is test sendimage function
 function sendTestImageMessage(recipientId, imageurl)	{
