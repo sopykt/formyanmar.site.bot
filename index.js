@@ -1318,6 +1318,17 @@ function sendTextMessage(recipientId, messageText) {
   callSendAPI(messageData);
 }
 
+// test function for send message
+function sendTestTextMessage(messageText) {
+  var messageData = {
+    recipient: {
+      id: "107003829801466"
+    },
+    message: messageText,
+    metadata: "DEVELOPER_DEFINED_METADATA"
+  }
+};
+sendTestTextMessage("Hi its worked");
 // this is test sendimage function
 function sendTestImageMessage(recipientId, imageurl)	{
 	var messageData = {
