@@ -19,7 +19,7 @@ var chance = new Chance();
 const readLastLines = require('read-last-lines');
 
 
-app.set('port', (process.env.PORT || 2000))
+app.set('port', (process.env.PORT || 3000))
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}))
