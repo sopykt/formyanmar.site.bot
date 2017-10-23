@@ -202,7 +202,7 @@ function receivedMessage(event) {
 		break;
 
     default:
-    sendTextMessage(senderID, messageText);
+    sendTextMessage(senderID, "");
     }
   }
   } else if (messageAttachments) {
